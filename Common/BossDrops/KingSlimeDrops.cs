@@ -1,3 +1,4 @@
+using SpectreMod.Core.DropConditions;
 using SpectreMod.Content.Charms;
 using Terraria;
 using Terraria.ID;
@@ -10,8 +11,7 @@ namespace SpectreMod.Common.BossDrops
     {
         public override void ModifyNPCLoot(NPC npc, NPCLoot npcLoot) {
             if (npc.type == NPCID.KingSlime) {
-                // Add the Slime Charm to the King Slime's loot table
-                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<SlimeCharm>(), 1, 1, 1));
+                npcLoot.Add(ItemDropRule.ByCondition(new CharmDropCondition(), ModContent.ItemType<SlimeCharm>(), 1, 1, 1));
             }
         }
     }

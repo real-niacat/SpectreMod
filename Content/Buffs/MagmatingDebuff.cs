@@ -32,6 +32,7 @@ namespace SpectreMod.Content.Buffs
 
     public class MagmatingDebuffNPC : GlobalNPC
     {
+        public override bool InstancePerEntity => true;
         public bool debuffed;
         public override void ResetEffects(NPC npc)
         {

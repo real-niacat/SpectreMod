@@ -4,3 +4,12 @@ Items: {
 		Tooltip: ""
 	}
 }
+
+DropConditions.SlimeCharm: Mods.SpectreMod.DropConditions.SlimeCharm
+
+Buffs: {
+	MagmatingDebuff: {
+		Description: Mods.SpectreMod.Buffs.MagmatingDebuff.Description
+		DisplayName: Magmating Debuff
+	}
+}
