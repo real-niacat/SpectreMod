@@ -10,8 +10,7 @@
 
 	<!-- References -->
 	<ItemGroup>
-	  <Folder Include="Content\" />
-	  <Folder Include="Common\"/>
+	  <Folder Include="Common\" />
 	</ItemGroup>
 
 </Project>
