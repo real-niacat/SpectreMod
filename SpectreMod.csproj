@@ -11,6 +11,7 @@
 	<!-- References -->
 	<ItemGroup>
 	  <Folder Include="Content\" />
+	  <Folder Include="Common\"/>
 	</ItemGroup>
 
 </Project>
