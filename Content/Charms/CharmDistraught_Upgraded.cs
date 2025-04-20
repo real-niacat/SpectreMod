@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SpectreMod.Content.Charms;
+using SpectreMod.Content.Materials;
 using Terraria.ModLoader;
 using Terraria;
 using Terraria.ID;
+using SpectreMod.Core.SpecialGroups;
 
 namespace SpectreMod.Content.Charms
 {
@@ -26,6 +29,15 @@ namespace SpectreMod.Content.Charms
         {
             player.GetDamage(DamageClass.Generic) *= 0.93f;
             player.GetModPlayer<CharmDistraughtPlayer>().intensity = 2;
+        }
+        
+        public override void AddRecipes()
+        {
+            Recipe recipe = CreateRecipe();
+            recipe.AddIngredient<CharmDistraught_Base>();
+            recipe.AddIngredient<PlanterasSeed>();
+            recipe.AddTile(TileID.MythrilAnvil);
+            recipe.Register();
         }
     }
 }

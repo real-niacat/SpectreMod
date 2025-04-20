@@ -150,6 +150,11 @@ Items: {
 		DisplayName: Moon Lord Fragment
 		Tooltip: ""
 	}
+
+	PlanterasSeed: {
+		DisplayName: Planteras Seed
+		Tooltip: ""
+	}
 }
 
 DropConditions: {
@@ -170,6 +175,7 @@ DropConditions: {
 	MoonLordCharm: Drops once
 	CultistCharm: Drops once
 	EmpressCharm: Drops once
+	SkeletronPrimeCharm: Drops once
 }
 
 Buffs: {

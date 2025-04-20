@@ -1,5 +1,6 @@
 using SpectreMod.Core.DropConditions;
 using SpectreMod.Content.CharmsFragments;
+using SpectreMod.Content.Materials;
 using Terraria;
 using Terraria.ID;
 using Terraria.GameContent.ItemDropRules;
@@ -12,6 +13,7 @@ namespace SpectreMod.Common.BossDrops
         public override void ModifyNPCLoot(NPC npc, NPCLoot npcLoot) {
             if (npc.type == NPCID.Plantera) {
                 npcLoot.Add(ItemDropRule.ByCondition(new PlanteraFragmentDropCondition(), ModContent.ItemType<PlanteraFragment>(), 1, 1, 1));
+                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<PlanterasSeed>(), 3, 1, 1));
             }
         }
     }

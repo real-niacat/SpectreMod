@@ -35,8 +35,8 @@ namespace SpectreMod.Content.Charms
             recipe.AddIngredient(ModContent.ItemType<TwinsFragment>(), 1);
             recipe.AddIngredient(ModContent.ItemType<DestroyerFragment>(), 1);
             recipe.AddIngredient(ModContent.ItemType<SkeletronPrimeFragment>(), 1);
-            recipe.AddIngredient(ModContent.ItemType<PlanteraFragment>(), 1);
             recipe.AddIngredient(ModContent.ItemType<QueenSlimeFragment>(), 1);
+            recipe.AddIngredient(ModContent.ItemType<PlanteraFragment>(), 1);
             recipe.AddTile(TileID.DemonAltar);
             recipe.Register();
         }
