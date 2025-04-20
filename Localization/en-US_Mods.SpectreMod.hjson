@@ -8,6 +8,20 @@ Items: {
 		Tooltip: Could this be part of something greater?
 		DisplayName: Slime Fragment
 	}
+
+	EoCFragment: {
+		DisplayName: Eye of Cthulhu Fragment
+		Tooltip:
+			'''
+			I mean this must have some use for sure
+			Right...
+			'''
+	}
+
+	EvilFragment: {
+		DisplayName: Evil Fragment
+		Tooltip: ""
+	}
 }
 
 DropConditions.SlimeCharm: Drops from King Slime once
