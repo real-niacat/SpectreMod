@@ -30,31 +30,124 @@ Items: {
 	CharmDistraught_Base: {
 		Tooltip:
 			'''
-			Wearing this makes you feel..
-			Distraught? maybe Dreadful?
-			But nontheless it has some power with it.
+			10% decreased damage
+			60% chance to inflict enemies with a debuff on hit
 			'''
-		DisplayName: Charm of Distraught Base
+		DisplayName: Charm of Distraught
 	}
 
 	CharmProgress_Base: {
-		DisplayName: Charm of Progress Base
-		Tooltip: ""
-
+		DisplayName: Charm of Progress
+		Tooltip:
+			'''
+			10% increased damage
+			10% faster movement acceleration
+			'''
 	}
 
 	CharmProgress_Upgraded: {
-		DisplayName: Charm of Progress Upgraded
-		Tooltip: ""
+		DisplayName: Activated Charm of Progress
+		Tooltip:
+			'''
+			20% increased damage
+			20% faster movement acceleration
+			'''
 	}
 
 	CharmDistraught_Upgraded: {
-		DisplayName: Charm of Distraught Upgraded
-		Tooltip: ""
+		DisplayName: Activated Charm of Distraught
+		Tooltip:
+			'''
+			7% decreased damage
+			80% chance to inflict enemies with a strong debuff on hit
+			'''
 	}
 
 	CharmDistraught_UpgradedPlus: {
-		DisplayName: Charm of Distraught Upgraded Plus
+		DisplayName: True Charm of Distraught
+		Tooltip: Dealing damage will inflict enemies with a strong debuff
+	}
+
+	DeerClopsFragment: {
+		DisplayName: DeerClops Fragment
+		Tooltip:
+			'''
+			This one seems to have...
+			a bit of a cold warmth to it?
+			'''
+	}
+
+	QueenBeeFragment: {
+		DisplayName: QueenBee Fragment
+		Tooltip:
+			'''
+			Smells rather sweet
+			but also has an odd aroma to it
+			'''
+	}
+
+	SkeletronFragment: {
+		DisplayName: Skeletron Fragment
+		Tooltip: ""
+	}
+
+	WoFFragment: {
+		DisplayName: Wall OF Flesh Fragment
+		Tooltip: ""
+	}
+
+	CharmLunacy: {
+		DisplayName: Charm of Lunacy
+		Tooltip: Dealing damage fires lifestealing knives and meteors from the sky
+	}
+
+	DestroyerFragment: {
+		DisplayName: Destroyer Fragment
+		Tooltip: ""
+	}
+
+	PlanteraFragment: {
+		DisplayName: Plantera Fragment
+		Tooltip: ""
+	}
+
+	QueenSlimeFragment: {
+		DisplayName: Queen Slime Fragment
+		Tooltip: ""
+	}
+
+	SkeletronPrimeFragment: {
+		DisplayName: Skeletron Prime Fragment
+		Tooltip: ""
+	}
+
+	TwinsFragment: {
+		DisplayName: Twins Fragment
+		Tooltip: ""
+	}
+
+	DukeFishronFragment: {
+		DisplayName: Duke Fishron Fragment
+		Tooltip: ""
+	}
+
+	EmpressOfLightFragment: {
+		DisplayName: Empress Of Light Fragment
+		Tooltip: ""
+	}
+
+	GolemFragment: {
+		DisplayName: Golem Fragment
+		Tooltip: ""
+	}
+
+	LunaticCultistFragment: {
+		DisplayName: Lunatic Cultist Fragment
+		Tooltip: ""
+	}
+
+	MoonLordFragment: {
+		DisplayName: Moon Lord Fragment
 		Tooltip: ""
 	}
 }
@@ -63,11 +156,25 @@ DropConditions: {
 	SlimeCharm: Drops once
 	EoWCharm: Drops once
 	EoCCharm: Drops once
+	EvilCharm: Drops once
+	SkeletronCharm: Drops once
+	WoFCharm: Drops once
+	QueenBeeCharm: Drops once
+	DeerClopsCharm: Drops once
+	TwinsCharm: Drops once
+	DestroyerCharm: Drops once
+	PlanteraCharm: Drops once
+	QueenSlimeCharm: Drops once
+	GolemCharm: Drops once
+	DukeFishronCharm: Drops once
+	MoonLordCharm: Drops once
+	CultistCharm: Drops once
+	EmpressCharm: Drops once
 }
 
 Buffs: {
 	MagmatingDebuff: {
-		Description: Mods.SpectreMod.Buffs.MagmatingDebuff.Description
+		Description: insert debuff description here
 		DisplayName: Magmating Debuff
 	}
 }
