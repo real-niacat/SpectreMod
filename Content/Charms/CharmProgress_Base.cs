@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SpectreMod.Content.CharmsFragments;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -26,6 +27,18 @@ namespace SpectreMod.Content.Charms
         {
             player.GetDamage(DamageClass.Generic) += 0.1f; //+10% damage
             player.GetModPlayer<CharmProgressPlayer>().intensity = 10; //10% boost to accel speed
+        }
+
+        public override void AddRecipes()
+        {
+            Recipe recipe = CreateRecipe();
+            recipe.AddIngredient(ModContent.ItemType<TwinsFragment>(), 1);
+            recipe.AddIngredient(ModContent.ItemType<DestroyerFragment>(), 1);
+            recipe.AddIngredient(ModContent.ItemType<SkeletronPrimeFragment>(), 1);
+            recipe.AddIngredient(ModContent.ItemType<PlanteraFragment>(), 1);
+            recipe.AddIngredient(ModContent.ItemType<QueenSlimeFragment>(), 1);
+            recipe.AddTile(TileID.DemonAltar);
+            recipe.Register();
         }
     }
 
