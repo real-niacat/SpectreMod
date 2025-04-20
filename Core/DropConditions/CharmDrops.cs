@@ -43,11 +43,11 @@ namespace SpectreMod.Core.DropConditions
             return Description.Value;
         }
     }
-    public class EoWFragmentDropCondition : IItemDropRuleCondition
+    public class EvilFragmentDropCondition : IItemDropRuleCondition
     {
         private static LocalizedText Description;
 
-        public EoWFragmentDropCondition() {
+        public EvilFragmentDropCondition() {
             Description ??= Language.GetOrRegister("Mods.SpectreMod.DropConditions.EoWCharm");
         }
 
