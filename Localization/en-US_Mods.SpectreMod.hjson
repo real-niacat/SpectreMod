@@ -9,7 +9,6 @@ Items: {
 		DisplayName: Slime Fragment
 	}
 
-
 	EoCFragment: {
 		DisplayName: Eye of Cthulhu Fragment
 		Tooltip:
@@ -21,13 +20,41 @@ Items: {
 
 	EvilFragment: {
 		DisplayName: Evil Fragment
-		Tooltip: ""
+		Tooltip:
+			'''
+			This item has a...
+			unsettling evil aura about it
+			'''
 	}
 
 	CharmDistraught_Base: {
-		Tooltip: ""
-		DisplayName: Charm Distraught_ Base
+		Tooltip:
+		'''
+		Wearing this makes you feel..
+		Distraught? maybe Dreadful?
+		But nontheless it has some power with it.
+		'''
+		DisplayName: Charm of Distraught Base
+	}
 
+	CharmProgress_Base: {
+		DisplayName: Charm of Progress Base
+		Tooltip: ""
+	}
+
+	CharmProgress_Upgraded: {
+		DisplayName: Charm of Progress Upgraded
+		Tooltip: ""
+	}
+
+	CharmDistraught_Upgraded: {
+		DisplayName: Charm of Distraught Upgraded
+		Tooltip: ""
+	}
+
+	CharmDistraught_UpgradedPlus: {
+		DisplayName: Charm of Distraught Upgraded Plus
+		Tooltip: ""
 	}
 }
 

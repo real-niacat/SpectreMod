@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace SpectreMod.Content.Charms
@@ -17,7 +18,7 @@ namespace SpectreMod.Content.Charms
             Item.width = 32;
             Item.height = 32;
             Item.accessory = true;
-
+            Item.rare = ItemRarityID.Green;
             Item.defense = 10;
         }
 
