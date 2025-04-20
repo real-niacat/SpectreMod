@@ -67,6 +67,11 @@ Items: {
 		DisplayName: True Charm of Distraught
 		Tooltip: Dealing damage will inflict enemies with a strong debuff
 	}
+
+	CharmLunacy: {
+		Tooltip: ""
+		DisplayName: Charm Lunacy
+	}
 }
 
 DropConditions: {
