@@ -1,0 +1,40 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Terraria;
+using Terraria.ModLoader;
+
+namespace SpectreMod.Content.Charms
+{
+    public class CharmProgress_Base : ModItem
+    {
+        public override string Texture => "SpectreMod/Common/PlaceHolders/PlaceHolder";
+
+        public override void SetDefaults()
+        {
+            Item.width = 32;
+            Item.height = 32;
+            Item.accessory = true;
+
+            Item.defense = 10;
+        }
+
+        public override void UpdateAccessory(Player player, bool hideVisual)
+        {
+            player.GetDamage(DamageClass.Generic) += 0.1f; //+10% damage
+            player.GetModPlayer<CharmProgressPlayer>().intensity = 10; //10% boost to accel speed
+        }
+    }
+
+    public class CharmProgressPlayer : ModPlayer
+    {
+        public int intensity;
+        public override void PostUpdateRunSpeeds()
+        {
+            base.PostUpdateRunSpeeds();
+            Player.accRunSpeed *= 1 + (intensity / 100);
+        }
+    }
+}
