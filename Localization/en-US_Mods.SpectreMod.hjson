@@ -1,16 +1,11 @@
 Items: {
-	SlimeCharm: {
-		DisplayName: Slime Charm
-		Tooltip: Could this be part of something greater?
-	}
-
 	SlimeFragment: {
 		Tooltip: Could this be part of something greater?
-		DisplayName: Slime Fragment
+		DisplayName: Charm of Slime
 	}
 
 	EoCFragment: {
-		DisplayName: Eye of Cthulhu Fragment
+		DisplayName: Charm of Sight
 		Tooltip:
 			'''
 			I mean this must have some use for sure
@@ -19,7 +14,7 @@ Items: {
 	}
 
 	EvilFragment: {
-		DisplayName: Evil Fragment
+		DisplayName: Charm of the Tainted
 		Tooltip:
 			'''
 			This item has a...
@@ -69,7 +64,7 @@ Items: {
 	}
 
 	DeerClopsFragment: {
-		DisplayName: DeerClops Fragment
+		DisplayName: Charm of Starvation
 		Tooltip:
 			'''
 			This one seems to have...
@@ -78,7 +73,7 @@ Items: {
 	}
 
 	QueenBeeFragment: {
-		DisplayName: QueenBee Fragment
+		DisplayName: Charm of the Swarm
 		Tooltip:
 			'''
 			Smells rather sweet
@@ -87,12 +82,12 @@ Items: {
 	}
 
 	SkeletronFragment: {
-		DisplayName: Skeletron Fragment
+		DisplayName: Charm of Death
 		Tooltip: ""
 	}
 
 	WoFFragment: {
-		DisplayName: Wall OF Flesh Fragment
+		DisplayName: Charm of Flesh
 		Tooltip: ""
 	}
 
@@ -101,58 +96,58 @@ Items: {
 		Tooltip: Dealing damage fires lifestealing knives and meteors from the sky
 	}
 
-	DestroyerFragment: {
-		DisplayName: Destroyer Fragment
-		Tooltip: ""
-	}
-
-	PlanteraFragment: {
-		DisplayName: Plantera Fragment
-		Tooltip: ""
-	}
-
 	QueenSlimeFragment: {
-		DisplayName: Queen Slime Fragment
-		Tooltip: ""
-	}
-
-	SkeletronPrimeFragment: {
-		DisplayName: Skeletron Prime Fragment
+		DisplayName: Charm of the Holy Slime
 		Tooltip: ""
 	}
 
 	TwinsFragment: {
-		DisplayName: Twins Fragment
+		DisplayName: Charm of Knowledge
 		Tooltip: ""
 	}
 
-	DukeFishronFragment: {
-		DisplayName: Duke Fishron Fragment
+	DestroyerFragment: {
+		DisplayName: Charm of Annihilation
 		Tooltip: ""
 	}
 
-	EmpressOfLightFragment: {
-		DisplayName: Empress Of Light Fragment
+	SkeletronPrimeFragment: {
+		DisplayName: Charm of Inovation
+		Tooltip: ""
+	}
+
+	PlanteraFragment: {
+		DisplayName: Charm of Nature
 		Tooltip: ""
 	}
 
 	GolemFragment: {
-		DisplayName: Golem Fragment
+		DisplayName: Charm of Primalcy
+		Tooltip: ""
+	}
+
+	DukeFishronFragment: {
+		DisplayName: Charm of the Ocean
+		Tooltip: ""
+	}
+
+	EmpressOfLightFragment: {
+		DisplayName: Charm of Light
 		Tooltip: ""
 	}
 
 	LunaticCultistFragment: {
-		DisplayName: Lunatic Cultist Fragment
+		DisplayName: Charm of Devotion
 		Tooltip: ""
 	}
 
 	MoonLordFragment: {
-		DisplayName: Moon Lord Fragment
+		DisplayName: Charm of the Moon
 		Tooltip: ""
 	}
 
 	PlanterasSeed: {
-		DisplayName: Planteras Seed
+		DisplayName: Seed of Plantera
 		Tooltip: ""
 	}
 }
