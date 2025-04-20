@@ -1,11 +1,11 @@
 Items: {
 	SlimeCharm: {
 		DisplayName: Slime Charm
-		Tooltip: ""
+		Tooltip: Could this be part of something greater?
 	}
 }
 
-DropConditions.SlimeCharm: Mods.SpectreMod.DropConditions.SlimeCharm
+DropConditions.SlimeCharm: Drops from King Slime once
 
 Buffs: {
 	MagmatingDebuff: {

@@ -1,8 +1,9 @@
 using SpectreMod.Common.Players;
 using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace SpectreMod.Content.Charms
+namespace SpectreMod.Content.CharmsFragments
 {
     public class SlimeCharm : ModItem
     {
@@ -11,11 +12,12 @@ namespace SpectreMod.Content.Charms
             Item.height = 32;
             Item.maxStack = 1;
             Item.value = Item.sellPrice(0, 1);
-            Item.accessory = true;
         }
 
-        public override void UpdateAccessory(Player player, bool hideVisual) {
-            player.GetModPlayer<SlimeCharmEffect>().HasSlimeCharm = true;
+        public override void AddRecipes()
+        {
+            Recipe recipe = CreateRecipe();
+            recipe.AddIngredient(ItemID.KingSlimeBossBag, 3);
         }
     }
 }

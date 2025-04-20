@@ -1,5 +1,5 @@
 using SpectreMod.Common.Players;
-using SpectreMod.Content.Charms;
+using SpectreMod.Content.CharmsFragments;
 using Terraria;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.Localization;
