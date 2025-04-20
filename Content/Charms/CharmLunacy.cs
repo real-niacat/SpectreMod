@@ -9,6 +9,7 @@ using Terraria.ModLoader;
 using Terraria.DataStructures;
 using Microsoft.Xna.Framework;
 using Mono.CompilerServices.SymbolWriter;
+using SpectreMod.Content.CharmsFragments;
 
 namespace SpectreMod.Content.Charms
 {
@@ -28,6 +29,18 @@ namespace SpectreMod.Content.Charms
         {
             player.GetModPlayer<CharmLunacyPlayer>().lunatic = true;
             player.GetModPlayer<CharmLunacyPlayer>().lunacy_charm = Item;
+        }
+
+        public override void AddRecipes()
+        {
+            Recipe recipe = CreateRecipe();
+            recipe.AddIngredient(ModContent.ItemType<GolemFragment>(), 1);
+            recipe.AddIngredient(ModContent.ItemType<DukeFishronFragment>(), 1);
+            recipe.AddIngredient(ModContent.ItemType<EmpressOfLightFragment>(), 1);
+            recipe.AddIngredient(ModContent.ItemType<LunaticCultistFragment>(), 1);
+            recipe.AddIngredient(ModContent.ItemType<MoonLordFragment>(), 1);
+            recipe.AddTile(TileID.DemonAltar);
+            recipe.Register();
         }
     }
 
