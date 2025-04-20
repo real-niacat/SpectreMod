@@ -95,6 +95,14 @@ Items: {
 		DisplayName: Wall OF Flesh Fragment
 		Tooltip: ""
 	}
+
+	CharmLunacy: {
+		DisplayName: Charm of Lunacy
+		Tooltip:
+		'''
+		Dealing damage fires lifestealing knives and meteors from the sky
+		'''
+	}
 }
 
 DropConditions: {
