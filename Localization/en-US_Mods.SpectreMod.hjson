@@ -70,20 +70,20 @@ Items: {
 
 	DeerClopsFragment: {
 		DisplayName: DeerClops Fragment
-		Tooltip: 
-		'''
-		This one seems to have...
-		a bit of a cold warmth to it?
-		'''
+		Tooltip:
+			'''
+			This one seems to have...
+			a bit of a cold warmth to it?
+			'''
 	}
 
 	QueenBeeFragment: {
 		DisplayName: QueenBee Fragment
-		Tooltip: 
-		'''
-		Smells rather sweet
-		but also has an odd aroma to it
-		'''
+		Tooltip:
+			'''
+			Smells rather sweet
+			but also has an odd aroma to it
+			'''
 	}
 
 	SkeletronFragment: {
