@@ -40,6 +40,7 @@ Items: {
 	CharmProgress_Base: {
 		DisplayName: Charm of Progress Base
 		Tooltip: ""
+
 	}
 
 	CharmProgress_Upgraded: {
