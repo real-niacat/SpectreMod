@@ -30,17 +30,15 @@ Items: {
 	CharmDistraught_Base: {
 		Tooltip:
 			'''
-			Wearing this makes you feel..
-			Distraught? maybe Dreadful?
-			But nontheless it has some power with it.
+			10% decreased damage
+			60% chance to inflict enemies with a debuff on hit
 			'''
-		DisplayName: Charm of Distraught Base
+		DisplayName: Charm of Distraught
 	}
 
 	CharmProgress_Base: {
 		DisplayName: Charm of Progress Base
 		Tooltip: ""
-
 	}
 
 	CharmProgress_Upgraded: {
@@ -49,13 +47,17 @@ Items: {
 	}
 
 	CharmDistraught_Upgraded: {
-		DisplayName: Charm of Distraught Upgraded
-		Tooltip: ""
+		DisplayName: Activated Charm of Distraught
+		Tooltip:
+			'''
+			7% decreased damage
+			80% chance to inflict enemies with a strong debuff on hit
+			'''
 	}
 
 	CharmDistraught_UpgradedPlus: {
-		DisplayName: Charm of Distraught Upgraded Plus
-		Tooltip: ""
+		DisplayName: True Charm of Distraught
+		Tooltip: Dealing damage will inflict enemies with a strong debuff
 	}
 }
 

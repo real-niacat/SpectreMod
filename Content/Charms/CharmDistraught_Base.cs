@@ -33,7 +33,7 @@ namespace SpectreMod.Content.Charms
     public class CharmDistraughtPlayer : ModPlayer
     {
         public int intensity;
-        public static int[] pool_base = { BuffID.Poisoned, BuffID.Bleeding, BuffID.Slow, BuffID.OnFire, BuffID.Frostburn };
+        public static int[] pool_base = { BuffID.Poisoned, BuffID.Bleeding, BuffID.OnFire, BuffID.Frostburn };
         public static int[] pool_upgr = { BuffID.Ichor, BuffID.Electrified };
         public static int[] pool_max = { BuffID.CursedInferno, ModContent.BuffType<MagmatingDebuff>() };
         //sorry for using 3 different variables
@@ -46,8 +46,8 @@ namespace SpectreMod.Content.Charms
             {
                 int chance = 40 + (intensity * 20); //really dumb way to do it, but it works ehe
                 int[] pool = pool_base;
-                if (intensity > 1) { pool.Concat(pool_upgr); }
-                if (intensity > 2) { pool.Concat(pool_max); }
+                if (intensity > 1) { pool = [.. pool, .. pool_upgr]; }
+                if (intensity > 2) { pool = [.. pool, .. pool_max]; }
 
                 int rnd = Main.rand.Next(100) + 1; //.Next(int) is inclusive to 0 and exclusive to n, adding 1 is useful for what we need.
                 if (rnd <= chance)
