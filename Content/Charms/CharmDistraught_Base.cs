@@ -1,5 +1,6 @@
 ﻿using MonoMod.Core.Platforms;
 using SpectreMod.Content.Buffs;
+using SpectreMod.Content.CharmsFragments;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +28,18 @@ namespace SpectreMod.Content.Charms
         {
             player.GetDamage(DamageClass.Generic) *= 0.9f; //i know it's a bit unforgiving but, it says -10% damage, and god damn it im going to make it take away 10% of your damage.
             player.GetModPlayer<CharmDistraughtPlayer>().intensity = 1;
+        }
+        public override void AddRecipes()
+        {
+            Recipe recipe = CreateRecipe();
+            recipe.AddIngredient(ModContent.ItemType<SlimeFragment>(), 1);
+            recipe.AddIngredient(ModContent.ItemType<QueenBeeFragment>(), 1);
+            recipe.AddIngredient(ModContent.ItemType<EoCFragment>(), 1);
+            recipe.AddIngredient(ModContent.ItemType<EvilFragment>(), 1);
+            recipe.AddIngredient(ModContent.ItemType<SkeletronFragment>(), 1);
+            recipe.AddIngredient(ModContent.ItemType<WoFFragment>(), 1);
+            recipe.AddTile(TileID.DemonAltar);
+            recipe.Register();
         }
     }
 
