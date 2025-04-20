@@ -51,7 +51,7 @@ namespace SpectreMod.Content.Charms
                 int rnd = Main.rand.Next(100) + 1; //.Next(int) is inclusive to 0 and exclusive to n, adding 1 is useful for what we need.
                 if (rnd <= chance)
                 {
-                    target.AddBuff(pool[Main.rand.Next(pool.Length)], 15);
+                    target.AddBuff(pool[Main.rand.Next(pool.Length)], 15*60);
                 }
             }
         }

@@ -8,6 +8,11 @@ Items: {
 		Tooltip: Could this be part of something greater?
 		DisplayName: Slime Fragment
 	}
+
+	CharmDistraught_Base: {
+		Tooltip: ""
+		DisplayName: Charm Distraught_ Base
+	}
 }
 
 DropConditions.SlimeCharm: Drops from King Slime once
