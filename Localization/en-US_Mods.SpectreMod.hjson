@@ -9,6 +9,7 @@ Items: {
 		DisplayName: Slime Fragment
 	}
 
+
 	EoCFragment: {
 		DisplayName: Eye of Cthulhu Fragment
 		Tooltip:
@@ -21,6 +22,11 @@ Items: {
 	EvilFragment: {
 		DisplayName: Evil Fragment
 		Tooltip: ""
+
+	CharmDistraught_Base: {
+		Tooltip: ""
+		DisplayName: Charm Distraught_ Base
+
 	}
 }
 
