@@ -101,7 +101,7 @@ DropConditions: {
 	SlimeCharm: Drops once
 	EoWCharm: Drops once
 	EoCCharm: Drops once
-	EvilCharm: Mods.SpectreMod.DropConditions.EvilCharm
+	EvilCharm: Drops once
 }
 
 Buffs: {
