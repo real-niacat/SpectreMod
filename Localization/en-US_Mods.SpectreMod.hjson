@@ -125,6 +125,31 @@ Items: {
 		DisplayName: Twins Fragment
 		Tooltip: ""
 	}
+
+	DukeFishronFragment: {
+		DisplayName: Duke Fishron Fragment
+		Tooltip: ""
+	}
+
+	EmpressOfLightFragment: {
+		DisplayName: Empress Of Light Fragment
+		Tooltip: ""
+	}
+
+	GolemFragment: {
+		DisplayName: Golem Fragment
+		Tooltip: ""
+	}
+
+	LunaticCultistFragment: {
+		DisplayName: Lunatic Cultist Fragment
+		Tooltip: ""
+	}
+
+	MoonLordFragment: {
+		DisplayName: Moon Lord Fragment
+		Tooltip: ""
+	}
 }
 
 DropConditions: {
@@ -140,6 +165,11 @@ DropConditions: {
 	DestroyerCharm: Drops once
 	PlanteraCharm: Drops once
 	QueenSlimeCharm: Drops once
+	GolemCharm: Drops once
+	DukeFishronCharm: Drops once
+	MoonLordCharm: Drops once
+	CultistCharm: Drops once
+	EmpressCharm: Drops once
 }
 
 Buffs: {
