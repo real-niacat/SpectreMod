@@ -9,7 +9,6 @@ Items: {
 		DisplayName: Slime Fragment
 	}
 
-
 	EoCFragment: {
 		DisplayName: Eye of Cthulhu Fragment
 		Tooltip:
@@ -27,7 +26,16 @@ Items: {
 	CharmDistraught_Base: {
 		Tooltip: ""
 		DisplayName: Charm Distraught_ Base
+	}
 
+	CharmDistraught_Upgraded: {
+		DisplayName: Charm Distraught_ Upgraded
+		Tooltip: ""
+	}
+
+	CharmDistraught_UpgradedPlus: {
+		DisplayName: Charm Distraught_ Upgraded Plus
+		Tooltip: ""
 	}
 }
 
