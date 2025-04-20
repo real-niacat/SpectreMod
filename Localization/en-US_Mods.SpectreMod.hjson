@@ -29,11 +29,11 @@ Items: {
 
 	CharmDistraught_Base: {
 		Tooltip:
-		'''
-		Wearing this makes you feel..
-		Distraught? maybe Dreadful?
-		But nontheless it has some power with it.
-		'''
+			'''
+			Wearing this makes you feel..
+			Distraught? maybe Dreadful?
+			But nontheless it has some power with it.
+			'''
 		DisplayName: Charm of Distraught Base
 	}
 
@@ -58,7 +58,11 @@ Items: {
 	}
 }
 
-DropConditions.SlimeCharm: Drops from King Slime once
+DropConditions: {
+	SlimeCharm: Drops once
+	EoWCharm: Drops once
+	EoCCharm: Drops once
+}
 
 Buffs: {
 	MagmatingDebuff: {
