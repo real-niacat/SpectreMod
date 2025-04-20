@@ -223,4 +223,94 @@ namespace SpectreMod.Core.DropConditions
             return Description.Value;
         }
     }
+    public class GolemFragmentDropCondition : IItemDropRuleCondition
+    {
+        private static LocalizedText Description;
+
+        public GolemFragmentDropCondition() {
+            Description ??= Language.GetOrRegister("Mods.SpectreMod.DropConditions.GolemCharm");
+        }
+
+        public bool CanDrop(DropAttemptInfo info) {
+            return Main.expertMode &! NPC.downedGolemBoss;
+        }
+        public bool CanShowItemDropInUI() {
+            return true;
+        }
+        public string GetConditionDescription() {
+            return Description.Value;
+        }
+    }
+    public class EmpressFragmentDropCondition : IItemDropRuleCondition
+    {
+        private static LocalizedText Description;
+
+        public EmpressFragmentDropCondition() {
+            Description ??= Language.GetOrRegister("Mods.SpectreMod.DropConditions.EmpressCharm");
+        }
+
+        public bool CanDrop(DropAttemptInfo info) {
+            return Main.expertMode &! NPC.downedEmpressOfLight;
+        }
+        public bool CanShowItemDropInUI() {
+            return true;
+        }
+        public string GetConditionDescription() {
+            return Description.Value;
+        }
+    }
+    public class DukeFishronFragmentDropCondition : IItemDropRuleCondition
+    {
+        private static LocalizedText Description;
+
+        public DukeFishronFragmentDropCondition() {
+            Description ??= Language.GetOrRegister("Mods.SpectreMod.DropConditions.DukeFishronCharm");
+        }
+
+        public bool CanDrop(DropAttemptInfo info) {
+            return Main.expertMode &! NPC.downedFishron;
+        }
+        public bool CanShowItemDropInUI() {
+            return true;
+        }
+        public string GetConditionDescription() {
+            return Description.Value;
+        }
+    }
+    public class CultistFragmentDropCondition : IItemDropRuleCondition
+    {
+        private static LocalizedText Description;
+
+        public CultistFragmentDropCondition() {
+            Description ??= Language.GetOrRegister("Mods.SpectreMod.DropConditions.CultistCharm");
+        }
+
+        public bool CanDrop(DropAttemptInfo info) {
+            return Main.expertMode &! NPC.downedAncientCultist;
+        }
+        public bool CanShowItemDropInUI() {
+            return true;
+        }
+        public string GetConditionDescription() {
+            return Description.Value;
+        }
+    }
+    public class MoonLordFragmentDropCondition : IItemDropRuleCondition
+    {
+        private static LocalizedText Description;
+
+        public MoonLordFragmentDropCondition() {
+            Description ??= Language.GetOrRegister("Mods.SpectreMod.DropConditions.MoonLordCharm");
+        }
+
+        public bool CanDrop(DropAttemptInfo info) {
+            return Main.expertMode &! NPC.downedMoonlord;
+        }
+        public bool CanShowItemDropInUI() {
+            return true;
+        }
+        public string GetConditionDescription() {
+            return Description.Value;
+        }
+    }
 }
