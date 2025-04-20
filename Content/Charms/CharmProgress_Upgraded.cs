@@ -3,28 +3,29 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Terraria.ModLoader;
 using Terraria;
 using Terraria.ID;
+using Terraria.ModLoader;
 
 namespace SpectreMod.Content.Charms
 {
-    public class CharmDistraught_UpgradedPlus : ModItem
+    public class CharmProgress_Upgraded : ModItem
     {
         public override string Texture => "SpectreMod/Common/PlaceHolders/PlaceHolder";
 
         public override void SetDefaults()
         {
-            //this is copied code from myself
             Item.width = 32;
             Item.height = 32;
-            Item.rare = ItemRarityID.Expert;
             Item.accessory = true;
+            Item.rare = ItemRarityID.Purple; //upgraded rarity
+            Item.defense = 15;
         }
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            player.GetModPlayer<CharmDistraughtPlayer>().intensity = 3;
+            player.GetDamage(DamageClass.Generic) += 0.2f; //+10% damage
+            player.GetModPlayer<CharmProgressPlayer>().intensity = 20; //10% boost to accel speed
         }
     }
 }

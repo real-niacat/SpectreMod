@@ -20,26 +20,50 @@ Items: {
 
 	EvilFragment: {
 		DisplayName: Evil Fragment
-		Tooltip: ""
+		Tooltip:
+			'''
+			This item has a...
+			unsettling evil aura about it
+			'''
 	}
 
 	CharmDistraught_Base: {
+		Tooltip:
+			'''
+			Wearing this makes you feel..
+			Distraught? maybe Dreadful?
+			But nontheless it has some power with it.
+			'''
+		DisplayName: Charm of Distraught Base
+	}
+
+	CharmProgress_Base: {
+		DisplayName: Charm of Progress Base
 		Tooltip: ""
-		DisplayName: Charm Distraught_ Base
+
+	}
+
+	CharmProgress_Upgraded: {
+		DisplayName: Charm of Progress Upgraded
+		Tooltip: ""
 	}
 
 	CharmDistraught_Upgraded: {
-		DisplayName: Charm Distraught_ Upgraded
+		DisplayName: Charm of Distraught Upgraded
 		Tooltip: ""
 	}
 
 	CharmDistraught_UpgradedPlus: {
-		DisplayName: Charm Distraught_ Upgraded Plus
+		DisplayName: Charm of Distraught Upgraded Plus
 		Tooltip: ""
 	}
 }
 
-DropConditions.SlimeCharm: Drops from King Slime once
+DropConditions: {
+	SlimeCharm: Drops once
+	EoWCharm: Drops once
+	EoCCharm: Drops once
+}
 
 Buffs: {
 	MagmatingDebuff: {

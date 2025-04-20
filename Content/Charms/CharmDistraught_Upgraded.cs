@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Terraria.ModLoader;
 using Terraria;
+using Terraria.ID;
 
 namespace SpectreMod.Content.Charms
 {
@@ -17,6 +18,7 @@ namespace SpectreMod.Content.Charms
             //this is copied code from myself
             Item.width = 32;
             Item.height = 32;
+            Item.rare = ItemRarityID.Purple;
             Item.accessory = true;
         }
 
