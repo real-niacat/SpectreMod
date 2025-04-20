@@ -5,11 +5,11 @@ using Terraria.ModLoader;
 
 namespace SpectreMod.Content.CharmsFragments
 {
-    public class SlimeCharm : ModItem
+    public class SlimeFragment : ModItem
     {
         public override void SetDefaults() {
-            Item.width = 26;
-            Item.height = 32;
+            Item.width = 13;
+            Item.height = 16;
             Item.maxStack = 1;
             Item.value = Item.sellPrice(0, 1);
         }
@@ -18,6 +18,8 @@ namespace SpectreMod.Content.CharmsFragments
         {
             Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.KingSlimeBossBag, 3);
+            recipe.AddTile(TileID.WorkBenches);
+            recipe.Register();
         }
     }
 }

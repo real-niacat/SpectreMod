@@ -11,7 +11,7 @@ namespace SpectreMod.Common.BossDrops
     {
         public override void ModifyNPCLoot(NPC npc, NPCLoot npcLoot) {
             if (npc.type == NPCID.KingSlime) {
-                npcLoot.Add(ItemDropRule.ByCondition(new CharmDropCondition(), ModContent.ItemType<SlimeCharm>(), 1, 1, 1));
+                npcLoot.Add(ItemDropRule.ByCondition(new SlimeFragmentDropCondition(), ModContent.ItemType<SlimeFragment>(), 1, 1, 1));
             }
         }
     }

@@ -7,11 +7,11 @@ using Terraria.Localization;
 namespace SpectreMod.Core.DropConditions
 {
     // This is a drop condition that checks if the player has the Slime Charm equipped.
-    public class CharmDropCondition : IItemDropRuleCondition
+    public class SlimeFragmentDropCondition : IItemDropRuleCondition
     {
         private static LocalizedText Description;
 
-        public CharmDropCondition() {
+        public SlimeFragmentDropCondition() {
             Description ??= Language.GetOrRegister("Mods.SpectreMod.DropConditions.SlimeCharm");
         }
 

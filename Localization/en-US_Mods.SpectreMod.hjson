@@ -3,6 +3,11 @@ Items: {
 		DisplayName: Slime Charm
 		Tooltip: Could this be part of something greater?
 	}
+
+	SlimeFragment: {
+		Tooltip: Could this be part of something greater?
+		DisplayName: Slime Fragment
+	}
 }
 
 DropConditions.SlimeCharm: Drops from King Slime once
