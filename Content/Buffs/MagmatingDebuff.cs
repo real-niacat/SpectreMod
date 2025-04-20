@@ -60,7 +60,7 @@ namespace SpectreMod.Content.Buffs
 
                 if (npc.boss)
                 {
-                    npc.lifeRegen -= 1 + (int)(npc.life * 0.02f);
+                    npc.lifeRegen -= 1 + (int)(npc.life * 0.035f);
                 }
                 else
                 {

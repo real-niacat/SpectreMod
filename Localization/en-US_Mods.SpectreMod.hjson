@@ -37,13 +37,21 @@ Items: {
 	}
 
 	CharmProgress_Base: {
-		DisplayName: Charm of Progress Base
-		Tooltip: ""
+		DisplayName: Charm of Progress
+		Tooltip:
+			'''
+			10% increased damage
+			10% faster movement acceleration
+			'''
 	}
 
 	CharmProgress_Upgraded: {
-		DisplayName: Charm of Progress Upgraded
-		Tooltip: ""
+		DisplayName: Activated Charm of Progress
+		Tooltip:
+			'''
+			20% increased damage
+			20% faster movement acceleration
+			'''
 	}
 
 	CharmDistraught_Upgraded: {
