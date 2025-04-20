@@ -48,7 +48,7 @@ namespace SpectreMod.Core.DropConditions
         private static LocalizedText Description;
 
         public EvilFragmentDropCondition() {
-            Description ??= Language.GetOrRegister("Mods.SpectreMod.DropConditions.EoWCharm");
+            Description ??= Language.GetOrRegister("Mods.SpectreMod.DropConditions.EvilCharm");
         }
 
         public bool CanDrop(DropAttemptInfo info) {

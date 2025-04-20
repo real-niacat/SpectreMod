@@ -68,9 +68,32 @@ Items: {
 		Tooltip: Dealing damage will inflict enemies with a strong debuff
 	}
 
-	CharmLunacy: {
+	DeerClopsFragment: {
+		DisplayName: DeerClops Fragment
+		Tooltip:
+			'''
+			This one seems to have...
+			a bit of a cold warmth to it?
+			'''
+	}
+
+	QueenBeeFragment: {
+		DisplayName: QueenBee Fragment
+		Tooltip:
+			'''
+			Smells rather sweet
+			but also has an odd aroma to it
+			'''
+	}
+
+	SkeletronFragment: {
+		DisplayName: Skeletron Fragment
 		Tooltip: ""
-		DisplayName: Charm Lunacy
+	}
+
+	WoFFragment: {
+		DisplayName: Wall OF Flesh Fragment
+		Tooltip: ""
 	}
 }
 
@@ -78,6 +101,11 @@ DropConditions: {
 	SlimeCharm: Drops once
 	EoWCharm: Drops once
 	EoCCharm: Drops once
+	EvilCharm: Drops once
+	SkeletronCharm: Drops once
+	WoFCharm: Drops once
+	QueenBeeCharm: Drops once
+	DeerClopsCharm: Drops once
 }
 
 Buffs: {
