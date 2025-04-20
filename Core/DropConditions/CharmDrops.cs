@@ -133,4 +133,94 @@ namespace SpectreMod.Core.DropConditions
             return Description.Value;
         }
     }
+    public class DestroyerFragmentDropCondition : IItemDropRuleCondition
+    {
+        private static LocalizedText Description;
+
+        public DestroyerFragmentDropCondition() {
+            Description ??= Language.GetOrRegister("Mods.SpectreMod.DropConditions.DestroyerCharm");
+        }
+
+        public bool CanDrop(DropAttemptInfo info) {
+            return Main.expertMode &! NPC.downedMechBoss1;
+        }
+        public bool CanShowItemDropInUI() {
+            return true;
+        }
+        public string GetConditionDescription() {
+            return Description.Value;
+        }
+    }
+    public class TwinsFragmentDropCondition : IItemDropRuleCondition
+    {
+        private static LocalizedText Description;
+
+        public TwinsFragmentDropCondition() {
+            Description ??= Language.GetOrRegister("Mods.SpectreMod.DropConditions.TwinsCharm");
+        }
+
+        public bool CanDrop(DropAttemptInfo info) {
+            return Main.expertMode &! NPC.downedMechBoss2;
+        }
+        public bool CanShowItemDropInUI() {
+            return true;
+        }
+        public string GetConditionDescription() {
+            return Description.Value;
+        }
+    }
+    public class SkeletronPrimeFragmentDropCondition : IItemDropRuleCondition
+    {
+        private static LocalizedText Description;
+
+        public SkeletronPrimeFragmentDropCondition() {
+            Description ??= Language.GetOrRegister("Mods.SpectreMod.DropConditions.SkeletronPrimeCharm");
+        }
+
+        public bool CanDrop(DropAttemptInfo info) {
+            return Main.expertMode &! NPC.downedMechBoss3;
+        }
+        public bool CanShowItemDropInUI() {
+            return true;
+        }
+        public string GetConditionDescription() {
+            return Description.Value;
+        }
+    }
+    public class PlanteraFragmentDropCondition : IItemDropRuleCondition
+    {
+        private static LocalizedText Description;
+
+        public PlanteraFragmentDropCondition() {
+            Description ??= Language.GetOrRegister("Mods.SpectreMod.DropConditions.PlanteraCharm");
+        }
+
+        public bool CanDrop(DropAttemptInfo info) {
+            return Main.expertMode &! NPC.downedPlantBoss;
+        }
+        public bool CanShowItemDropInUI() {
+            return true;
+        }
+        public string GetConditionDescription() {
+            return Description.Value;
+        }
+    }
+    public class QueenSlimeFragmentDropCondition : IItemDropRuleCondition
+    {
+        private static LocalizedText Description;
+
+        public QueenSlimeFragmentDropCondition() {
+            Description ??= Language.GetOrRegister("Mods.SpectreMod.DropConditions.QueenSlimeCharm");
+        }
+
+        public bool CanDrop(DropAttemptInfo info) {
+            return Main.expertMode &! NPC.downedQueenSlime;
+        }
+        public bool CanShowItemDropInUI() {
+            return true;
+        }
+        public string GetConditionDescription() {
+            return Description.Value;
+        }
+    }
 }

@@ -98,10 +98,32 @@ Items: {
 
 	CharmLunacy: {
 		DisplayName: Charm of Lunacy
-		Tooltip:
-		'''
-		Dealing damage fires lifestealing knives and meteors from the sky
-		'''
+		Tooltip: Dealing damage fires lifestealing knives and meteors from the sky
+	}
+
+	DestroyerFragment: {
+		DisplayName: Destroyer Fragment
+		Tooltip: ""
+	}
+
+	PlanteraFragment: {
+		DisplayName: Plantera Fragment
+		Tooltip: ""
+	}
+
+	QueenSlimeFragment: {
+		DisplayName: Queen Slime Fragment
+		Tooltip: ""
+	}
+
+	SkeletronPrimeFragment: {
+		DisplayName: Skeletron Prime Fragment
+		Tooltip: ""
+	}
+
+	TwinsFragment: {
+		DisplayName: Twins Fragment
+		Tooltip: ""
 	}
 }
 
@@ -114,6 +136,10 @@ DropConditions: {
 	WoFCharm: Drops once
 	QueenBeeCharm: Drops once
 	DeerClopsCharm: Drops once
+	TwinsCharm: Drops once
+	DestroyerCharm: Drops once
+	PlanteraCharm: Drops once
+	QueenSlimeCharm: Drops once
 }
 
 Buffs: {
