@@ -102,6 +102,10 @@ DropConditions: {
 	EoWCharm: Drops once
 	EoCCharm: Drops once
 	EvilCharm: Drops once
+	SkeletronCharm: Drops once
+	WoFCharm: Drops once
+	QueenBeeCharm: Drops once
+	DeerClopsCharm: Drops once
 }
 
 Buffs: {

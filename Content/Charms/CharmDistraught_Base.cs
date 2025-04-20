@@ -33,10 +33,11 @@ namespace SpectreMod.Content.Charms
         {
             Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ModContent.ItemType<SlimeFragment>(), 1);
-            recipe.AddIngredient(ModContent.ItemType<QueenBeeFragment>(), 1);
             recipe.AddIngredient(ModContent.ItemType<EoCFragment>(), 1);
             recipe.AddIngredient(ModContent.ItemType<EvilFragment>(), 1);
+            recipe.AddIngredient(ModContent.ItemType<QueenBeeFragment>(), 1);
             recipe.AddIngredient(ModContent.ItemType<SkeletronFragment>(), 1);
+            recipe.AddIngredient(ModContent.ItemType<DeerClopsFragment>(), 1);
             recipe.AddIngredient(ModContent.ItemType<WoFFragment>(), 1);
             recipe.AddTile(TileID.DemonAltar);
             recipe.Register();
