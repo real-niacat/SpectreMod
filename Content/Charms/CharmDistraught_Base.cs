@@ -14,7 +14,7 @@ namespace SpectreMod.Content.Charms
 {
     public class CharmDistraught_Base : ModItem
     {
-        public override string Texture => "SpectreMod/Common/PlaceHolders/PlaceHolder";
+        public override string Texture => "SpectreMod/Common/PlaceHolders/CharmPlaceholder";
 
         public override void SetDefaults()
         {
