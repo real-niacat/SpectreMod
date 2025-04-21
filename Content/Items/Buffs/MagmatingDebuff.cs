@@ -46,6 +46,7 @@ namespace SpectreMod.Content.Buffs
 
         public override void DrawEffects(NPC npc, ref Color drawColor)
         {
+            
             if (debuffed)
             {
                 Dust d = Dust.NewDustDirect(npc.position, npc.width, npc.height, DustID.Flare);

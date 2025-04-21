@@ -1,1 +1,10 @@
-This description will show up on the steam page, check out https://steamcommunity.com/comment/Guide/formattinghelp.
+[h1]Spectre Mod[/h1]
+a mod that aims to push terraria to its limits, in more ways than one.
+(a general content mod which tends towards unbalance, but in both ways, don't expect every fight to be easy.)
+
+you may suggest content in the discord ( https://discord.gg/a6wQG2AqxP )
+anyone is free to contibute code or art if you feel like it
+
+[h2]Spectre Mod is [b]not[/b] compatible with multiplayer[/h2]
+you are recommended to play this mod on [b]expert[/b] mode!
+any torment, struggle or lack of life signs experienced on higher difficulties are not the legal responsibility of the Spectre Development Team

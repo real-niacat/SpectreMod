@@ -10,6 +10,7 @@ using Terraria.DataStructures;
 using Microsoft.Xna.Framework;
 using Mono.CompilerServices.SymbolWriter;
 using SpectreMod.Content.Items.CharmsFragments;
+using Terraria.GameContent.Bestiary;
 
 namespace SpectreMod.Content.Items.Charms
 {
