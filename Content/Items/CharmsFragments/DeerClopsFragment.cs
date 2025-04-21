@@ -2,9 +2,9 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace SpectreMod.Content.CharmsFragments
+namespace SpectreMod.Content.Items.CharmsFragments
 {
-    public class TwinsFragment : ModItem
+    public class DeerClopsFragment : ModItem
     {
         public override void SetDefaults() {
             Item.width = 13;
@@ -17,7 +17,7 @@ namespace SpectreMod.Content.CharmsFragments
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();
-            recipe.AddIngredient(ItemID.TwinsBossBag, 3);
+            recipe.AddIngredient(ItemID.DeerclopsBossBag, 3);
             recipe.AddTile(TileID.WorkBenches);
             recipe.Register();
         }

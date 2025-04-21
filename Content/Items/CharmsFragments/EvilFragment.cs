@@ -1,10 +1,11 @@
+using SpectreMod.Core.SpecialGroups;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace SpectreMod.Content.CharmsFragments
+namespace SpectreMod.Content.Items.CharmsFragments
 {
-    public class WoFFragment : ModItem
+    public class EvilFragment : ModItem
     {
         public override void SetDefaults() {
             Item.width = 13;
@@ -17,7 +18,7 @@ namespace SpectreMod.Content.CharmsFragments
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();
-            recipe.AddIngredient(ItemID.WallOfFleshBossBag, 3);
+            recipe.AddRecipeGroup(RecipeGroups.EvilBagGroup, 3);
             recipe.AddTile(TileID.WorkBenches);
             recipe.Register();
         }

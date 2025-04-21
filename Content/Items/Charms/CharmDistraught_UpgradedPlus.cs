@@ -8,7 +8,7 @@ using Terraria;
 using Terraria.ID;
 using SpectreMod.Content.Materials;
 
-namespace SpectreMod.Content.Charms
+namespace SpectreMod.Content.Items.Charms
 {
     public class CharmDistraught_UpgradedPlus : ModItem
     {
