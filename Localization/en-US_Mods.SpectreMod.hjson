@@ -150,6 +150,16 @@ Items: {
 		DisplayName: Seed of Plantera
 		Tooltip: ""
 	}
+
+	DrakomireScale: {
+		DisplayName: Drakomire Scale
+		Tooltip: ""
+	}
+
+	DrakomireFang: {
+		DisplayName: Drakomire Fang
+		Tooltip: ""
+	}
 }
 
 DropConditions: {
