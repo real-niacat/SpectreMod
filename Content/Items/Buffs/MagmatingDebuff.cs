@@ -13,6 +13,8 @@ namespace SpectreMod.Content.Buffs
 {
     public class MagmatingDebuff : ModBuff
     {
+
+        public override string Texture => "SpectreMod/Common/PlaceHolders/PlaceHolder";
         public override void SetStaticDefaults()
         {
             Main.debuff[Type] = true;

@@ -2,7 +2,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace SpectreMod.Content.CharmsFragments;
+namespace SpectreMod.Content.Items.CharmsFragments;
 public class DukeFishronFragment : ModItem
 {
     public override void SetDefaults() {

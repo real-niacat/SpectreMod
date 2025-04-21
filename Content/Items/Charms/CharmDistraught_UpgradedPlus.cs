@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 using Terraria.ModLoader;
 using Terraria;
 using Terraria.ID;
+using SpectreMod.Content.Materials;
 
-namespace SpectreMod.Content.Charms
+namespace SpectreMod.Content.Items.Charms
 {
     public class CharmDistraught_UpgradedPlus : ModItem
     {
@@ -25,6 +26,15 @@ namespace SpectreMod.Content.Charms
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
             player.GetModPlayer<CharmDistraughtPlayer>().intensity = 3;
+        }
+
+        public override void AddRecipes()
+        {
+            Recipe recipe = CreateRecipe();
+            recipe.AddIngredient<CharmDistraught_Upgraded>();
+            recipe.AddIngredient(ItemID.LunarBar, 25);
+            recipe.AddTile(TileID.LunarCraftingStation);
+            recipe.Register();
         }
     }
 }

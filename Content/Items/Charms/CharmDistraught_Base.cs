@@ -1,6 +1,6 @@
 ﻿using MonoMod.Core.Platforms;
 using SpectreMod.Content.Buffs;
-using SpectreMod.Content.CharmsFragments;
+using SpectreMod.Content.Items.CharmsFragments;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +10,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace SpectreMod.Content.Charms
+namespace SpectreMod.Content.Items.Charms
 {
     public class CharmDistraught_Base : ModItem
     {

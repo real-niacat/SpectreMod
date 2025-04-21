@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SpectreMod.Content.CharmsFragments;
+using SpectreMod.Content.Items.CharmsFragments;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace SpectreMod.Content.Charms
+namespace SpectreMod.Content.Items.Charms
 {
     public class CharmProgress_Base : ModItem
     {
@@ -35,8 +35,8 @@ namespace SpectreMod.Content.Charms
             recipe.AddIngredient(ModContent.ItemType<TwinsFragment>(), 1);
             recipe.AddIngredient(ModContent.ItemType<DestroyerFragment>(), 1);
             recipe.AddIngredient(ModContent.ItemType<SkeletronPrimeFragment>(), 1);
-            recipe.AddIngredient(ModContent.ItemType<PlanteraFragment>(), 1);
             recipe.AddIngredient(ModContent.ItemType<QueenSlimeFragment>(), 1);
+            recipe.AddIngredient(ModContent.ItemType<PlanteraFragment>(), 1);
             recipe.AddTile(TileID.DemonAltar);
             recipe.Register();
         }

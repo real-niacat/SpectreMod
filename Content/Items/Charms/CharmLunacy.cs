@@ -9,9 +9,9 @@ using Terraria.ModLoader;
 using Terraria.DataStructures;
 using Microsoft.Xna.Framework;
 using Mono.CompilerServices.SymbolWriter;
-using SpectreMod.Content.CharmsFragments;
+using SpectreMod.Content.Items.CharmsFragments;
 
-namespace SpectreMod.Content.Charms
+namespace SpectreMod.Content.Items.Charms
 {
     public class CharmLunacy : ModItem
     {

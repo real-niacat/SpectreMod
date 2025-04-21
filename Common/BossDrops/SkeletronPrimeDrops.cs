@@ -1,5 +1,5 @@
 using SpectreMod.Core.DropConditions;
-using SpectreMod.Content.CharmsFragments;
+using SpectreMod.Content.Items.CharmsFragments;
 using Terraria;
 using Terraria.ID;
 using Terraria.GameContent.ItemDropRules;
@@ -11,7 +11,7 @@ namespace SpectreMod.Common.BossDrops
     {
         public override void ModifyNPCLoot(NPC npc, NPCLoot npcLoot) {
             if (npc.type == NPCID.SkeletronPrime) {
-                npcLoot.Add(ItemDropRule.ByCondition(new SkeletronFragmentDropCondition(), ModContent.ItemType<SkeletronFragment>(), 1, 1, 1));
+                npcLoot.Add(ItemDropRule.ByCondition(new SkeletronPrimeFragmentDropCondition(), ModContent.ItemType<SkeletronPrimeFragment>(), 1, 1, 1));
             }
         }
     }
