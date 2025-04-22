@@ -50,5 +50,10 @@ namespace SpectreMod.Content.Items.Charms
             base.PostUpdateRunSpeeds();
             Player.accRunSpeed *= 1 + (intensity / 100);
         }
+        public override void ResetEffects()
+        {
+            base.ResetEffects();
+            intensity = 0;
+        }
     }
 }

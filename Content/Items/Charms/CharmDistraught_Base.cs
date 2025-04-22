@@ -70,5 +70,10 @@ namespace SpectreMod.Content.Items.Charms
                 }
             }
         }
+        public override void ResetEffects()
+        {
+            base.ResetEffects();
+            intensity = 0; //reset the intensity to 0, so it doesn't stack with other charms
+        }
     }
 }
