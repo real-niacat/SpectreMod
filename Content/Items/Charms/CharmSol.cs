@@ -10,6 +10,7 @@ using Terraria.GameContent.NetModules;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
+using SpectreMod.Content.Materials;
 
 namespace SpectreMod.Content.Items.Charms
 {
@@ -31,6 +32,16 @@ namespace SpectreMod.Content.Items.Charms
             player.GetModPlayer<CharmSolPlayer>().PlayerSpeed = 1;
             player.GetModPlayer<CharmSolPlayer>().MountSpeed = 1;
             player.GetModPlayer<CharmSolPlayer>().IsActive = true;
+        }
+        
+        public override void AddRecipes()
+        {
+            Recipe recipe = CreateRecipe();
+            recipe.AddIngredient(ModContent.ItemType<DrakomireFang>(), 30);
+            recipe.AddIngredient(ModContent.ItemType<DrakomireScale>(), 20);
+            recipe.AddIngredient(ItemID.LunarTabletFragment, 25);
+            recipe.AddTile(TileID.LunarCraftingStation);
+            recipe.Register();
         }
     }
     
