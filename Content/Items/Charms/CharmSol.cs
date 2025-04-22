@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using SpectreMod.Content.Buffs;
 using Terraria;
 using Terraria.Net;
 using Terraria.GameContent;
@@ -106,6 +107,14 @@ namespace SpectreMod.Content.Items.Charms
             {
                 Player.accRunSpeed *= 1;
                 Player.maxRunSpeed *= 1;
+            }
+        }
+        public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)
+        {
+            base.ModifyHitNPC(target, ref modifiers);
+            if (Player.magmaStone && IsActive)
+            {
+                target.AddBuff(ModContent.BuffType<MagmatingDebuff>(), 15 * 60);
             }
         }
         public override void ResetEffects()
