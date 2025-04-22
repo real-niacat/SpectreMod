@@ -27,7 +27,7 @@ namespace SpectreMod.Content.Items.Charms
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
             player.GetDamage(DamageClass.Generic) *= 1.9f;
-            player.GetModPlayer<CharmSolPlayer>().MeleeSize = 1;
+            player.GetModPlayer<CharmSolPlayer>().MeleeSize = 3;
             player.GetModPlayer<CharmSolPlayer>().PlayerSpeed = 1;
             player.GetModPlayer<CharmSolPlayer>().MountSpeed = 1;
             player.GetModPlayer<CharmSolPlayer>().IsActive = true;
@@ -45,7 +45,7 @@ namespace SpectreMod.Content.Items.Charms
         public int PlayerSpeedMod = 1;
         public int MeleeSize = 0;
         public int MeleeSizeMod = 1;
-        public int scalemod = 0;
+        public int scalemod;
         public bool IsActive = false;
         
         public void RegisterKill(NPC npc)
@@ -60,7 +60,7 @@ namespace SpectreMod.Content.Items.Charms
                     MeleeSizeMod++;
                     if (KillNumRequired >= 1000)
                     {
-                        KillNumRequired += 1000;
+                        KillNumRequired += 500;
                     }
                     else
                     {
@@ -73,20 +73,29 @@ namespace SpectreMod.Content.Items.Charms
         {
             base.ModifyItemScale(item, ref scale);
             if (IsActive)
-            {
-            scale *= MeleeSize + (MeleeSizeMod / 10f);
-            }
-            else
-            {
-                scale = 1;
-            }
+                {
+                scale *= MeleeSize + (MeleeSizeMod / 2f);
+                }
+                else
+                {
+                    scale = 1;
+                }
             scalemod = (int)scale;
         }
         
         public override void PostUpdateRunSpeeds()
         {
             base.PostUpdateRunSpeeds();
-            Player.accRunSpeed *= 1 + PlayerSpeedMod;
+            if (IsActive)
+            {
+                Player.accRunSpeed *= 1 + (PlayerSpeed + (PlayerSpeedMod * 2f));
+                Player.maxRunSpeed *= 1 + (MountSpeed + (MountSpeedMod * 2f));
+            }
+            else
+            {
+                Player.accRunSpeed *= 1;
+                Player.maxRunSpeed *= 1;
+            }
         }
         public override void ResetEffects()
         {
