@@ -21,6 +21,15 @@ namespace SpectreMod.Content.Items.Charms
             Item.rare = ItemRarityID.Purple; //upgraded rarity
             Item.defense = 15;
         }
+        
+        public virtual bool CanAccessoryBeEquippedWith(Item equippedItem, Item itemToEquip, Player player, AccessorySlotType context)
+        {
+            if (equippedItem.ModItem is CharmProgress_Upgraded && equippedItem != itemToEquip)
+            {
+                return false; // Prevents equipping multiple charms of the same type
+            }
+            return true; // Allows equipping other charms or items
+        }
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {

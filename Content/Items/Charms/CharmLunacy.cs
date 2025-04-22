@@ -25,6 +25,15 @@ namespace SpectreMod.Content.Items.Charms
             Item.rare = ItemRarityID.Green;
             Item.accessory = true;
         }
+        
+        public virtual bool CanAccessoryBeEquippedWith(Item equippedItem, Item itemToEquip, Player player, AccessorySlotType context)
+        {
+            if (equippedItem.ModItem is CharmLunacy && equippedItem != itemToEquip)
+            {
+                return false; // Prevents equipping multiple charms of the same type
+            }
+            return true; // Allows equipping other charms or items
+        }
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
