@@ -160,6 +160,11 @@ Items: {
 		DisplayName: Drakomire Fang
 		Tooltip: ""
 	}
+
+	CharmSol: {
+		DisplayName: Charm Sol
+		Tooltip: ""
+	}
 }
 
 DropConditions: {
