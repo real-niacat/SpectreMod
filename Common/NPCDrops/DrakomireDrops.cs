@@ -1,7 +1,7 @@
 using SpectreMod.Content.Materials;
 using Terraria;
-using Terraria.ID;
 using Terraria.GameContent.ItemDropRules;
+using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace SpectreMod.Common.NPCDrops
