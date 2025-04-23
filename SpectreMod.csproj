@@ -7,10 +7,12 @@
 	<PropertyGroup>
 		
 	</PropertyGroup>
+	<ItemGroup>
+	  <None Remove="Common\PlaceHolders\PlaceHolder_Head_Boss.png" />
+	</ItemGroup>
 
 	<!-- References -->
 	<ItemGroup>
-	  <Folder Include="Common\" />
 	  <Folder Include="Core\" />
 	</ItemGroup>
 
