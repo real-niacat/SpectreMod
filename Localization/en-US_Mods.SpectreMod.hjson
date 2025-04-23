@@ -22,56 +22,6 @@ Items: {
 			'''
 	}
 
-	CharmDistraught_Base: {
-		Tooltip:
-			'''
-			10% decreased damage
-			60% chance to inflict enemies with a debuff on hit
-			'''
-		DisplayName: Charm of Distraught
-	}
-
-	CharmProgress_Base: {
-		DisplayName: Charm of Progress
-		Tooltip:
-			'''
-			10% increased damage
-			10% faster movement acceleration
-			'''
-	}
-
-	CharmProgress_Upgraded: {
-		DisplayName: Activated Charm of Progress
-		Tooltip:
-			'''
-			20% increased damage
-			20% faster movement acceleration
-			'''
-	}
-
-	CharmDistraught_Upgraded: {
-		DisplayName: Activated Charm of Distraught
-		Tooltip:
-			'''
-			7% decreased damage
-			80% chance to inflict enemies with a strong debuff on hit
-			'''
-	}
-
-	CharmDistraught_UpgradedPlus: {
-		DisplayName: True Charm of Distraught
-		Tooltip: Dealing damage will inflict enemies with a strong debuff
-	}
-
-	DeerClopsFragment: {
-		DisplayName: Charm of Starvation
-		Tooltip:
-			'''
-			This one seems to have...
-			a bit of a cold warmth to it?
-			'''
-	}
-
 	QueenBeeFragment: {
 		DisplayName: Charm of the Swarm
 		Tooltip:
@@ -86,14 +36,18 @@ Items: {
 		Tooltip: ""
 	}
 
+	DeerClopsFragment: {
+		DisplayName: Charm of Starvation
+		Tooltip:
+			'''
+			This one seems to have...
+			a bit of a cold warmth to it?
+			'''
+	}
+
 	WoFFragment: {
 		DisplayName: Charm of Flesh
 		Tooltip: ""
-	}
-
-	CharmLunacy: {
-		DisplayName: Charm of Lunacy
-		Tooltip: Dealing damage fires lifestealing knives and meteors from the sky
 	}
 
 	QueenSlimeFragment: {
@@ -146,13 +100,54 @@ Items: {
 		Tooltip: ""
 	}
 
-	PlanterasSeed: {
-		DisplayName: Seed of Plantera
-		Tooltip: ""
+	CharmDistraught_Base: {
+		Tooltip:
+			'''
+			10% decreased damage
+			60% chance to inflict enemies with a debuff on hit
+			'''
+		DisplayName: Charm of Distraught
 	}
 
-	DrakomireScale: {
-		DisplayName: Drakomire Scale
+	CharmDistraught_Upgraded: {
+		DisplayName: Activated Charm of Distraught
+		Tooltip:
+			'''
+			7% decreased damage
+			80% chance to inflict enemies with a strong debuff on hit
+			'''
+	}
+
+	CharmDistraught_UpgradedPlus: {
+		DisplayName: True Charm of Distraught
+		Tooltip: Dealing damage will inflict enemies with a strong debuff
+	}
+
+	CharmProgress_Base: {
+		DisplayName: Charm of Progress
+		Tooltip:
+			'''
+			10% increased damage
+			10% faster movement acceleration
+			'''
+	}
+
+	CharmProgress_Upgraded: {
+		DisplayName: Activated Charm of Progress
+		Tooltip:
+			'''
+			20% increased damage
+			20% faster movement acceleration
+			'''
+	}
+
+	CharmLunacy: {
+		DisplayName: Charm of Lunacy
+		Tooltip: Dealing damage fires lifestealing knives and meteors from the sky
+	}
+
+	CharmSol: {
+		DisplayName: Charm of the Sol
 		Tooltip: ""
 	}
 
@@ -161,8 +156,13 @@ Items: {
 		Tooltip: ""
 	}
 
-	CharmSol: {
-		DisplayName: Charm of the Sol
+	DrakomireScale: {
+		DisplayName: Drakomire Scale
+		Tooltip: ""
+	}
+
+	PlanterasSeed: {
+		DisplayName: Planteras Seed
 		Tooltip: ""
 	}
 }

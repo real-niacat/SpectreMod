@@ -1,12 +1,14 @@
-﻿using System;
+﻿using SpectreMod.Common.Players;
+using SpectreMod.Content.Items.Charms;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Terraria.ModLoader;
 using Terraria;
+using Terraria.ModLoader;
 
-namespace SpectreMod.Content.Items.Charms
+namespace SpectreMod.Core.ModPlayer
 {
     public class GlobalCharmLogic
     {
@@ -33,11 +35,11 @@ namespace SpectreMod.Content.Items.Charms
             //if (equippedItem == null) { return true; }
             if (incomingItem == null) { return true; }
             int i = incomingItem.type;
-            if (ItemIsCharm(i))
+            int k = equippedItem.type;
+            if (ItemIsCharm(i) && ItemIsCharm(k))
             {
                 return false;
             }
-
             return true; // Allows equipping other charms or items
         }
     }

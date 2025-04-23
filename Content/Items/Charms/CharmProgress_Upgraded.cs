@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SpectreMod.Core.ModPlayer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

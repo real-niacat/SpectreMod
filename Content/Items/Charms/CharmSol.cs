@@ -1,23 +1,22 @@
+using SpectreMod.Content.Buffs;
+using SpectreMod.Content.Materials;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using SpectreMod.Content.Buffs;
 using Terraria;
-using Terraria.Net;
 using Terraria.GameContent;
 using Terraria.GameContent.Bestiary;
 using Terraria.GameContent.NetModules;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
-using SpectreMod.Content.Materials;
+using Terraria.Net;
 
 namespace SpectreMod.Content.Items.Charms
 {
     public class CharmSol : ModItem
     {
-        public override string Texture => "SpectreMod/Common/PlaceHolders/CharmPlaceholder";
         
         public override void SetDefaults()
         {

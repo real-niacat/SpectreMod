@@ -13,7 +13,6 @@ namespace SpectreMod.Content.Items.CharmsFragments
             Item.maxStack = 1;
             Item.value = Item.sellPrice(0, 1);
         }
-        public override string Texture => "SpectreMod/Common/PlaceHolders/CharmFragmentPlaceholder";
 
         public override void AddRecipes()
         {
