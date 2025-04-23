@@ -1,9 +1,10 @@
-﻿using System;
+﻿using SpectreMod.Content.Items.CharmsFragments;
+using SpectreMod.Core.ModPlayer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SpectreMod.Content.Items.CharmsFragments;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -21,6 +22,11 @@ namespace SpectreMod.Content.Items.Charms
             Item.accessory = true;
             Item.rare = ItemRarityID.Green;
             Item.defense = 10;
+        }
+
+        public override bool CanAccessoryBeEquippedWith(Item equippedItem, Item incomingItem, Player player)
+        {
+            return GlobalCharmLogic.ValidEquip(equippedItem, incomingItem, player);
         }
 
         public override void UpdateAccessory(Player player, bool hideVisual)
@@ -49,6 +55,11 @@ namespace SpectreMod.Content.Items.Charms
         {
             base.PostUpdateRunSpeeds();
             Player.accRunSpeed *= 1 + (intensity / 100);
+        }
+        public override void ResetEffects()
+        {
+            base.ResetEffects();
+            intensity = 0;
         }
     }
 }

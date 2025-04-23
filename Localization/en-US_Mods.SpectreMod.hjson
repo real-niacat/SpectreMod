@@ -150,6 +150,21 @@ Items: {
 		DisplayName: Seed of Plantera
 		Tooltip: ""
 	}
+
+	DrakomireScale: {
+		DisplayName: Drakomire Scale
+		Tooltip: ""
+	}
+
+	DrakomireFang: {
+		DisplayName: Drakomire Fang
+		Tooltip: ""
+	}
+
+	CharmSol: {
+		DisplayName: Charm of the Sol
+		Tooltip: ""
+	}
 }
 
 DropConditions: {
@@ -179,3 +194,5 @@ Buffs: {
 		DisplayName: Magmating Debuff
 	}
 }
+
+NPCs.LepusPrime.DisplayName: Lepus Prime

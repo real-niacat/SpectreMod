@@ -1,6 +1,7 @@
 ﻿using MonoMod.Core.Platforms;
 using SpectreMod.Content.Buffs;
 using SpectreMod.Content.Items.CharmsFragments;
+using SpectreMod.Core.ModPlayer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +24,12 @@ namespace SpectreMod.Content.Items.Charms
             Item.rare = ItemRarityID.Green;
             Item.accessory = true;
         }
+
+        public override bool CanAccessoryBeEquippedWith(Item equippedItem, Item incomingItem, Player player)
+        {
+            return GlobalCharmLogic.ValidEquip(equippedItem, incomingItem, player);
+        }
+
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
@@ -69,6 +76,11 @@ namespace SpectreMod.Content.Items.Charms
                     target.AddBuff(pool[Main.rand.Next(pool.Length)], 15*60);
                 }
             }
+        }
+        public override void ResetEffects()
+        {
+            base.ResetEffects();
+            intensity = 0; //reset the intensity to 0, so it doesn't stack with other charms
         }
     }
 }

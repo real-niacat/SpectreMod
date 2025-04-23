@@ -1,9 +1,9 @@
-using SpectreMod.Core.DropConditions;
 using SpectreMod.Content.Items.CharmsFragments;
 using SpectreMod.Content.Materials;
+using SpectreMod.Core.DropConditions;
 using Terraria;
-using Terraria.ID;
 using Terraria.GameContent.ItemDropRules;
+using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace SpectreMod.Common.BossDrops

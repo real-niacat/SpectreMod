@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SpectreMod.Core.ModPlayer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,6 +21,11 @@ namespace SpectreMod.Content.Items.Charms
             Item.accessory = true;
             Item.rare = ItemRarityID.Purple; //upgraded rarity
             Item.defense = 15;
+        }
+
+        public override bool CanAccessoryBeEquippedWith(Item equippedItem, Item incomingItem, Player player)
+        {
+            return GlobalCharmLogic.ValidEquip(equippedItem, incomingItem, player);
         }
 
         public override void UpdateAccessory(Player player, bool hideVisual)

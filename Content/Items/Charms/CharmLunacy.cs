@@ -1,15 +1,17 @@
-﻿using System;
+﻿using Microsoft.Xna.Framework;
+using Mono.CompilerServices.SymbolWriter;
+using SpectreMod.Content.Items.CharmsFragments;
+using SpectreMod.Core.ModPlayer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Terraria.ID;
 using Terraria;
-using Terraria.ModLoader;
 using Terraria.DataStructures;
-using Microsoft.Xna.Framework;
-using Mono.CompilerServices.SymbolWriter;
-using SpectreMod.Content.Items.CharmsFragments;
+using Terraria.GameContent.Bestiary;
+using Terraria.ID;
+using Terraria.ModLoader;
 
 namespace SpectreMod.Content.Items.Charms
 {
@@ -23,6 +25,11 @@ namespace SpectreMod.Content.Items.Charms
             Item.height = 32;
             Item.rare = ItemRarityID.Green;
             Item.accessory = true;
+        }
+
+        public override bool CanAccessoryBeEquippedWith(Item equippedItem, Item incomingItem, Player player)
+        {
+            return GlobalCharmLogic.ValidEquip(equippedItem, incomingItem, player);
         }
 
         public override void UpdateAccessory(Player player, bool hideVisual)
