@@ -17,7 +17,6 @@ namespace SpectreMod.Content.Items.Charms
 {
     public class CharmSol : ModItem
     {
-        public override string Texture => "SpectreMod/Common/PlaceHolders/CharmPlaceholder";
         
         public override void SetDefaults()
         {

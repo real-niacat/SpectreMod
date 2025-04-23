@@ -150,10 +150,9 @@ Items: {
 		DisplayName: Charm of the Sol
 		Tooltip: ""
 	}
-}
 
-	PlanterasSeed: {
-		DisplayName: Seed of Plantera
+	DrakomireFang: {
+		DisplayName: Drakomire Fang
 		Tooltip: ""
 	}
 
@@ -162,10 +161,11 @@ Items: {
 		Tooltip: ""
 	}
 
-	DrakomireFang: {
-		DisplayName: Drakomire Fang
+	PlanterasSeed: {
+		DisplayName: Planteras Seed
 		Tooltip: ""
 	}
+}
 
 DropConditions: {
 	SlimeCharm: Drops once
