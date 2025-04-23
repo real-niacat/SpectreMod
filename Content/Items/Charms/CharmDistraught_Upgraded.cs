@@ -1,15 +1,15 @@
-﻿using System;
+﻿using SpectreMod.Content.Items.Charms;
+using SpectreMod.Content.Materials;
+using SpectreMod.Core.ModPlayer;
+using SpectreMod.Core.SpecialGroups;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SpectreMod.Content.Items.Charms;
-using SpectreMod.Content.Materials;
-using SpectreMod.Core.ModPlayer;
-using Terraria.ModLoader;
 using Terraria;
 using Terraria.ID;
-using SpectreMod.Core.SpecialGroups;
+using Terraria.ModLoader;
 
 namespace SpectreMod.Content.Items.Charms
 {

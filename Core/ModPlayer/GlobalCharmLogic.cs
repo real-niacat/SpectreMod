@@ -1,5 +1,5 @@
-﻿using SpectreMod.Content.Items.Charms;
-using SpectreMod.Common.Players;
+﻿using SpectreMod.Common.Players;
+using SpectreMod.Content.Items.Charms;
 using System;
 using System.Collections.Generic;
 using System.Linq;

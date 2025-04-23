@@ -1,9 +1,9 @@
-﻿using System;
+﻿using SpectreMod.Core.ModPlayer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SpectreMod.Core.ModPlayer;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
