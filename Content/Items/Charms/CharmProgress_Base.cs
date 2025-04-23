@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SpectreMod.Content.Items.CharmsFragments;
+using SpectreMod.Core.ModPlayer;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;

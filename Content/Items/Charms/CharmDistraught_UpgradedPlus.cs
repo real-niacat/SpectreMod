@@ -7,6 +7,7 @@ using Terraria.ModLoader;
 using Terraria;
 using Terraria.ID;
 using SpectreMod.Content.Materials;
+using SpectreMod.Core.ModPlayer;
 
 namespace SpectreMod.Content.Items.Charms
 {
