@@ -1,4 +1,5 @@
 ﻿using SpectreMod.Content.Items.Charms;
+using SpectreMod.Common.Players;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,11 +35,11 @@ namespace SpectreMod.Core.ModPlayer
             //if (equippedItem == null) { return true; }
             if (incomingItem == null) { return true; }
             int i = incomingItem.type;
-            if (ItemIsCharm(i))
+            int k = equippedItem.type;
+            if (ItemIsCharm(i) && ItemIsCharm(k))
             {
                 return false;
             }
-
             return true; // Allows equipping other charms or items
         }
     }
