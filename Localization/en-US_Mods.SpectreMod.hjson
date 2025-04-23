@@ -194,3 +194,5 @@ Buffs: {
 		DisplayName: Magmating Debuff
 	}
 }
+
+NPCs.LepusPrime.DisplayName: Lepus Prime
