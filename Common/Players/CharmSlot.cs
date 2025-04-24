@@ -1,5 +1,7 @@
 using SpectreMod.Content.Items.Charms;
 using SpectreMod.Core.ModPlayer;
+using System.Collections.Generic;
+using System.Linq;
 using Terraria;
 using Terraria.ModLoader;
 
@@ -10,7 +12,7 @@ namespace SpectreMod.Common.Players
         public override bool IsVisibleWhenNotEnabled() => true;
         public override bool IsEnabled()
         {
-            return Player.extraAccessorySlots > 0 && Player.GetModPlayer<SpectrePlayer>().CharmSlot && Player.CurrentLoadoutIndex >= SpectrePlayer.CharmLoadout;
+            return Player.extraAccessorySlots >= 0 && Player.GetModPlayer<SpectrePlayer>().CharmSlot && Player.CurrentLoadoutIndex >= SpectrePlayer.CharmLoadout;
         }
         public override bool CanAcceptItem(Item checkItem, AccessorySlotType context)
         {
