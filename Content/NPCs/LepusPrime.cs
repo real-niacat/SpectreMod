@@ -36,6 +36,11 @@ namespace SpectreMod.Content.NPCs
 
             data = [0, 0, 0, 0, 0];
         }
+        
+        public override bool CheckActive()
+        {
+            return false;
+        }
 
         public static Vector2 Up(float amt) { return new Vector2(0, -amt); }
         public static Vector2 Down(float amt) { return new Vector2(0, amt); }
@@ -66,11 +71,11 @@ namespace SpectreMod.Content.NPCs
             Player player = Main.player[NPC.FindClosestPlayer(out distance)];
             Vector2 plrpos = player.position;
 
-            if (Timer % 120 == 0)
+            if (Timer % 12 == 0)
             {
                 int chosenProjectile = ProjectileID.DeathLaser;
-                int speed = 10;
-                int spawnDistance = 70;
+                int speed = 15;
+                int spawnDistance = 40;
                 Projectile.NewProjectile(NPC.GetSource_FromAI(), plrpos + Tiles(Left(spawnDistance)), Right(speed), chosenProjectile, QuarterDamage, 0);
                 Projectile.NewProjectile(NPC.GetSource_FromAI(), plrpos + Tiles(Right(spawnDistance)), Left(speed), chosenProjectile, QuarterDamage, 0);
                 Projectile.NewProjectile(NPC.GetSource_FromAI(), plrpos + Tiles(Up(spawnDistance)), Down(speed), chosenProjectile, QuarterDamage, 0);
