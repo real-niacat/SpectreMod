@@ -165,6 +165,15 @@ Items: {
 		DisplayName: Planteras Seed
 		Tooltip: ""
 	}
+
+	HimboAxe: {
+		DisplayName: Himbo Axe
+		Tooltip:
+			'''
+			A Tool for a true terraria Streamer
+			Art by: callas
+			'''
+	}
 }
 
 DropConditions: {
