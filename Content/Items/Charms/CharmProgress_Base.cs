@@ -31,8 +31,8 @@ namespace SpectreMod.Content.Items.Charms
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            player.GetDamage(DamageClass.Generic) += 0.1f; //+10% damage
-            player.GetModPlayer<CharmProgressPlayer>().intensity = 10; //10% boost to accel speed
+            player.GetDamage(DamageClass.Generic) *= 0.85f; //-15% damage, multiplicitively
+            player.GetModPlayer<CharmProgressPlayer>().intensity = 50; //10% boost to accel speed
         }
 
         public override void AddRecipes()
@@ -54,8 +54,11 @@ namespace SpectreMod.Content.Items.Charms
         public override void PostUpdateRunSpeeds()
         {
             base.PostUpdateRunSpeeds();
-            Player.accRunSpeed *= 1 + (intensity / 100);
+            Player.runAcceleration *= 1 + (intensity / 100);
+            Player.wingAccRunSpeed *= 1 + (intensity / 100);
         }
+
+
         public override void ResetEffects()
         {
             base.ResetEffects();

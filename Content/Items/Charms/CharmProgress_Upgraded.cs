@@ -30,8 +30,8 @@ namespace SpectreMod.Content.Items.Charms
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            player.GetDamage(DamageClass.Generic) += 0.2f; //+10% damage
-            player.GetModPlayer<CharmProgressPlayer>().intensity = 20; //10% boost to accel speed
+            player.GetDamage(DamageClass.Generic) *= 0.92f; //-8% damage multiplicitively
+            player.GetModPlayer<CharmProgressPlayer>().intensity = 650; //10% boost to accel speed
         }
 
         public override void AddRecipes()

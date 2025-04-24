@@ -20,6 +20,7 @@ namespace SpectreMod.Content.Buffs
             Main.debuff[Type] = true;
             Main.pvpBuff[Type] = true;
             Main.buffNoSave[Type] = true;
+            BuffID.Sets.IsATagBuff[Type] = true;
             BuffID.Sets.LongerExpertDebuff[Type] = true;
         }
 

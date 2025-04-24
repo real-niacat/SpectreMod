@@ -127,8 +127,8 @@ Items: {
 		DisplayName: Charm of Progress
 		Tooltip:
 			'''
-			10% increased damage
-			10% faster movement acceleration
+			15% decreased damage
+			Heavily increased movement acceleration
 			'''
 	}
 
@@ -136,8 +136,8 @@ Items: {
 		DisplayName: Activated Charm of Progress
 		Tooltip:
 			'''
-			20% increased damage
-			20% faster movement acceleration
+			8% decreased damage
+			Ludicrously increased movement acceleration
 			'''
 	}
 

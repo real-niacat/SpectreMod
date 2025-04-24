@@ -24,8 +24,8 @@ namespace SpectreMod.Content.NPCs
         {
             base.SetDefaults();
             NPC.lifeMax = 300000;
-            NPC.width = 20;
-            NPC.height = 20;
+            NPC.width = 120;
+            NPC.height = 45;
 
             NPC.defense = 10;
             NPC.damage = 125;
@@ -42,6 +42,7 @@ namespace SpectreMod.Content.NPCs
         public static Vector2 Left(float amt) { return new Vector2(-amt, 0); }
         public static Vector2 Right(float amt) { return new Vector2(amt, 0); }
         public static Vector2 Tiles(Vector2 toTile) { return toTile * 16; }
+        public Vector2 Towards(Vector2 target) { Vector2 c = (target - NPC.position); c.Normalize(); return c; }
 
         public int[] data;
         public float gravityMult = 1f;
@@ -50,6 +51,9 @@ namespace SpectreMod.Content.NPCs
         {
             Timer++;
             NPC.GravityMultiplier *= gravityMult;
+            gravityMult = gravityMult < 1 ? gravityMult + 0.05f : gravityMult;
+
+
             float distance;
             Player player = Main.player[NPC.FindClosestPlayer(out distance)];
             Vector2 plrpos = player.position;
@@ -66,24 +70,24 @@ namespace SpectreMod.Content.NPCs
             }
 
 
+            if (NPC.velocity.X > 10) { NPC.velocity.X *= 0.99f; }
+            if (NPC.collideY) { NPC.velocity.X += Towards(plrpos).X; NPC.velocity.X *= 0.95f; }
 
-            if (data[0] <= 0 && NPC.collideY)
+            if (data[0] <= 0 && (NPC.collideX || NPC.collideY || distance > 80))
             {
                 
-                data[0] = Main.rand.Next(75, 220);
-                gravityMult = 0.01f;
+                data[0] = Main.rand.Next(110, 220);
+                gravityMult = 0.05f;
                 //jump code
                 Vector2 normalizedDiff = plrpos - NPC.position;
                 normalizedDiff.Normalize();
+                float spd = Math.Max(15, (float)Math.Pow(distance, 0.45f));
 
-                NPC.velocity += normalizedDiff * (float)Math.Pow(distance, 0.35f);
+                NPC.velocity += normalizedDiff * spd;
+
+                Projectile.NewProjectile(NPC.GetSource_FromAI(), NPC.Center, Towards(plrpos) * spd * 1.5f, ProjectileID.BombSkeletronPrime, QuarterDamage, 0);
 
             } else { data[0] = data[0] - 1; }
-
-            if (data[0] <= 50)
-            {
-                gravityMult = 1;
-            }
         }
     }
 }
