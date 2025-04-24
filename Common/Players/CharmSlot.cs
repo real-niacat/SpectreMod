@@ -12,7 +12,7 @@ namespace SpectreMod.Common.Players
         public override bool IsVisibleWhenNotEnabled() => true;
         public override bool IsEnabled()
         {
-            return Player.extraAccessorySlots >= 0 && Player.GetModPlayer<SpectrePlayer>().CharmSlot && Player.CurrentLoadoutIndex >= SpectrePlayer.CharmLoadout;
+            return true;
         }
         public override bool CanAcceptItem(Item checkItem, AccessorySlotType context)
         {
@@ -41,10 +41,6 @@ namespace SpectreMod.Common.Players
             }
             return false;
         }
-
-        public override string FunctionalTexture => "SpectreMod/Common/Placeholders/PlaceHolder";
-        public override string FunctionalBackgroundTexture => "SpectreMod/Common/Placeholders/PlaceHolder";
-        public override string VanityBackgroundTexture => "SpectreMod/Common/Placeholders/PlaceHolder";
 
         public override void OnMouseHover(AccessorySlotType context)
         {
