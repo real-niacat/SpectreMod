@@ -30,6 +30,11 @@ namespace SpectreMod.Content.NPCs
             NPC.damage = 125;
         }
 
+        public override bool CheckActive()
+        {
+            return false;
+        }
+
         public static Vector2 Up(float amt) { return new Vector2(0, -amt); }
         public static Vector2 Down(float amt) { return new Vector2(0, amt); }
         public static Vector2 Left(float amt) { return new Vector2(-amt, 0); }
@@ -43,7 +48,7 @@ namespace SpectreMod.Content.NPCs
             Player player = Main.player[NPC.FindClosestPlayer(out distance)];
             Vector2 plrpos = player.position;
 
-            if (Timer % 60 == 0)
+            if (Timer % 12 == 0)
             {
                 int chosenProjectile = ProjectileID.DeathLaser;
                 int speed = 15;
