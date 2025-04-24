@@ -85,7 +85,7 @@ namespace SpectreMod.Content.Items.Charms
             base.ModifyItemScale(item, ref scale);
             if (IsActive)
                 {
-                scale *= MeleeSize + (MeleeSizeMod * 100f);
+                scale *= MeleeSize + (MeleeSizeMod / 2f);
                 }
                 else
                 {

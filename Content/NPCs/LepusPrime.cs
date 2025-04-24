@@ -36,11 +36,6 @@ namespace SpectreMod.Content.NPCs
 
             data = [0, 0, 0, 0, 0];
         }
-        
-        public override bool CheckActive()
-        {
-            return false;
-        }
 
         public static Vector2 Up(float amt) { return new Vector2(0, -amt); }
         public static Vector2 Down(float amt) { return new Vector2(0, amt); }
