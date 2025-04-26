@@ -42,7 +42,6 @@ namespace SpectreMod.Content.Items.Charms
             Item.height = 32;
             Item.rare = ItemRarityID.Expert;
             Item.accessory = true;
-            Progression = totalDamageModifier / (1 + BaseLevelCost * level);
         }
         
         public override ModItem Clone(Item item)
@@ -116,7 +115,7 @@ namespace SpectreMod.Content.Items.Charms
                     damageLine.Text = damageLine.Text.Replace(damageKey, $"{(level * 0.1f) * 100}%");
                 }
             }
-            line = new TooltipLine(Mod, "Level", $"Bonus Minion Slots: {level}");
+            line = new TooltipLine(Mod, "Level", $"Bonus Minion Slots: {1 + (level / 2)}");
             line.OverrideColor = Color.Magenta;
             tooltips.Add(line);
         }
@@ -137,14 +136,13 @@ namespace SpectreMod.Content.Items.Charms
         { 
             if (charmStardust is null)
                 return;
-            SlotModifier = charmStardust.level;
+            SlotModifier += charmStardust.level;
             ManaBoost = charmStardust.level * 5;
             if (IsActive)    
                 charmStardust.totalDamageModifier += damage;
             if (IsActive && charmStardust.level < StardustCharm.MaxLevel && charmStardust.totalDamageModifier > StardustCharm.CumulativeLevelCost(charmStardust.level + 1))
             {
                 charmStardust.level++;
-                charmStardust.totalDamageModifier = 0L;
             }
         }
         

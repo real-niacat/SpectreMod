@@ -11,8 +11,6 @@ using System.Text;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.GameContent;
-using Terraria.GameContent.Bestiary;
-using Terraria.GameContent.NetModules;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
@@ -24,8 +22,8 @@ namespace SpectreMod.Content.Items.Charms
         
         internal const long BaseLevelCost = 400000L;
         internal static long LevelCost(int level) => BaseLevelCost * level;
-        internal static long CumulativeLevelCost(int level) => (BaseLevelCost / 2L) * level * (level + 1);
-        internal const int MaxLevel = 60; // was 60.
+        internal static long CumulativeLevelCost(int level) => BaseLevelCost / 2L * level * (level + 1);
+        internal const int MaxLevel = 60;
         
         internal const float ModifierAmount = 0.5f;
         
@@ -43,7 +41,7 @@ namespace SpectreMod.Content.Items.Charms
         
         public override ModItem Clone(Item item)
         {
-            CharmSol clone = (CharmSol)base.Clone(item);
+            var clone = (CharmSol)base.Clone(item);
             clone.level = level;
             clone.totalDamageModifier = totalDamageModifier;
             return clone;
@@ -102,14 +100,12 @@ namespace SpectreMod.Content.Items.Charms
         {
             level = tag.GetInt("level");
             if (level > MaxLevel)
-            {
                 level = MaxLevel;
-            }
             totalDamageModifier = tag.GetLong("totalDamage");
         }
         public override void NetSend(BinaryWriter writer)
         {
-            writer.Write((byte)level);
+            writer.Write(level);
             writer.Write(totalDamageModifier);
         }
         public override void NetReceive(BinaryReader reader)
@@ -157,9 +153,7 @@ namespace SpectreMod.Content.Items.Charms
             if (charmSol.level < CharmSol.MaxLevel && charmSol.totalDamageModifier > CharmSol.CumulativeLevelCost(charmSol.level + 1))
             {
                 ++charmSol.level;
-                if (charmSol.level > CharmSol.MaxLevel)
-                    charmSol.level = CharmSol.MaxLevel;
-                    Main.NewText($"Charm Sol Level Up! {charmSol.level}");
+                Main.NewText($"Charm Sol Level Up! {charmSol.level}");
             }
         }
         
