@@ -164,6 +164,14 @@ Items: {
 			'''
 	}
 
+	CharmVortex: {
+		DisplayName: Charm Vortex
+		Tooltip:
+		'''
+		Progress: [PROGRESS]%
+		Range Damage Increase: [RangeDmgInc]
+	}
+
 	DrakomireFang: {
 		DisplayName: Drakomire Fang
 		Tooltip: ""
@@ -184,7 +192,7 @@ Items: {
 		Tooltip:
 			'''
 			A Tool for a true terraria Streamer
-			Art by: callas
+			"Art by: callas"
 			'''
 	}
 }

@@ -17,6 +17,7 @@ namespace SpectreMod.Core.usermodifier
         public float MeleeSizeMod = DefaultMeleeSize;
         public bool charmSol = false;
         public bool charmStardust = false;
+        public bool charmVortex = false;
         public override void OnHitNPC( NPC target, NPC.HitInfo hit, int damageDone)
         {
             if (Player.whoAmI != Main.myPlayer)
@@ -28,6 +29,10 @@ namespace SpectreMod.Core.usermodifier
             if (charmStardust)
             {
                 Player.GetModPlayer<CharmStardustPlayer>().AccumulateDamageModifier(damageDone);
+            }
+            if (charmVortex)
+            {
+                Player.GetModPlayer<CharmVortexPlayer>().AccumulateDamageModifier(damageDone);
             }
         }
     }

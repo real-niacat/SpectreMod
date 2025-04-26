@@ -57,7 +57,7 @@ namespace SpectreMod.Content.Items.Charms
             modPlayer.charmStardust = true;
             CharmStardustPlayer charmStardustPlayer = player.GetModPlayer<CharmStardustPlayer>();
             charmStardustPlayer.charmStardust = this;
-            player.GetDamage(DamageClass.Summon) *= 1.9f;
+            player.GetDamage(DamageClass.Summon) *= 1 + level * 0.1f;
             player.maxMinions += 1 + (level / 2);
             player.statManaMax2 += level * 5;
             player.statMana += level * 5;
