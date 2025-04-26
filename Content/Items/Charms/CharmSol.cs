@@ -24,7 +24,6 @@ namespace SpectreMod.Content.Items.Charms
         
         internal const long BaseLevelCost = 400000L;
         internal static long LevelCost(int level) => BaseLevelCost * level;
-        internal static long CumulativeLevelCost(int level) => (BaseLevelCost / 2L) * level * (level + 1);
         internal const int MaxLevel = 60; // was 60.
         
         internal const float ModifierAmount = 0.5f;
@@ -54,12 +53,27 @@ namespace SpectreMod.Content.Items.Charms
             modPlayer.charmSol = true;
             CharmSolPlayer charmSolPlayer = player.GetModPlayer<CharmSolPlayer>();
             charmSolPlayer.charmSol = this;
-            player.GetDamage(DamageClass.Generic) *= 1.9f;
+            player.GetDamage(DamageClass.Melee) *= level * 0.1f;
             player.GetModPlayer<CharmSolPlayer>().MeleeSize = 3;
             player.GetModPlayer<CharmSolPlayer>().PlayerSpeed = 1;
             player.GetModPlayer<CharmSolPlayer>().MountSpeed = 1;
             player.GetModPlayer<CharmSolPlayer>().IsActive = true;
             modPlayer.MeleeSizeMod += level * ModifierAmount;
+        }
+
+        public override void ModifyTooltips(List<TooltipLine> tooltips)
+        {
+            TooltipLine line = new TooltipLine(Mod, "Level", $"Level: {level}");
+            line.OverrideColor = Color.Gold;
+            tooltips.Add(line);
+            
+            TooltipLine line2 = new TooltipLine(Mod, "Damage", $"Damage: {totalDamageModifier}");
+            line2.OverrideColor = Color.Gold;
+            tooltips.Add(line2);
+            
+            TooltipLine line3 = new TooltipLine(Mod, "LevelCost", $"Level Cost: {LevelCost(level + 1)}");
+            line3.OverrideColor = Color.Gold;
+            tooltips.Add(line3);
         }
 
         public override void SaveData(TagCompound tag)
@@ -110,6 +124,7 @@ namespace SpectreMod.Content.Items.Charms
         public int MeleeSize = 0;
         public int MeleeSizeMod = 1;
         public int scalemod;
+        public int DamageAmt;
         public bool IsActive = false;
         
         internal void AccumulateDamageModifier(long damage)
@@ -120,6 +135,7 @@ namespace SpectreMod.Content.Items.Charms
             // Actually accumulate the damage.
             charmSol.totalDamageModifier += damage;
             MeleeSizeMod =  charmSol.level;
+            DamageAmt = (int)charmSol.totalDamageModifier; 
             if (charmSol.level < CharmSol.MaxLevel && charmSol.totalDamageModifier > CharmSol.LevelCost(charmSol.level + 1))
             {
                 ++charmSol.level;
@@ -148,7 +164,7 @@ namespace SpectreMod.Content.Items.Charms
             if (IsActive)
             {
                 Player.accRunSpeed *= 1 + (PlayerSpeed + (PlayerSpeedMod * 2f));
-                Player.maxRunSpeed *= 1 + (MountSpeed + (MountSpeedMod * 2f));
+                Player.maxRunSpeed *= 1 + (MountSpeed + (MountSpeedMod / 2f));
             }
             else
             {
