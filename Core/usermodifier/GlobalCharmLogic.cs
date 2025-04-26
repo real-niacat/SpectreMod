@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using Terraria;
 using Terraria.ModLoader;
 
-namespace SpectreMod.Core.ModPlayer
+namespace SpectreMod.Core.usermodifier
 {
     public class GlobalCharmLogic
     {

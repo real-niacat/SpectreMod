@@ -1,7 +1,7 @@
 ﻿using MonoMod.Core.Platforms;
 using SpectreMod.Content.Buffs;
 using SpectreMod.Content.Items.CharmsFragments;
-using SpectreMod.Core.ModPlayer;
+using SpectreMod.Core.usermodifier;
 using System;
 using System.Collections.Generic;
 using System.Linq;

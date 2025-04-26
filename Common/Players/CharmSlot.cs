@@ -1,5 +1,5 @@
 using SpectreMod.Content.Items.Charms;
-using SpectreMod.Core.ModPlayer;
+using SpectreMod.Core.usermodifier;
 using System.Collections.Generic;
 using System.Linq;
 using Terraria;
