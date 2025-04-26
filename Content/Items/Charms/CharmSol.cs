@@ -37,7 +37,7 @@ namespace SpectreMod.Content.Items.Charms
         {
             Item.width = 32;
             Item.height = 32;
-            Item.rare = ItemRarityID.Green;
+            Item.rare = ItemRarityID.Expert;
             Item.accessory = true;
         }
         
