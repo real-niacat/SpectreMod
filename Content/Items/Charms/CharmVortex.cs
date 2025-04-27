@@ -26,7 +26,7 @@ namespace SpectreMod.Content.Items.Charms
     {
         internal const long BaseLevelCost = 400000L;
         internal static long LevelCost(int level) => BaseLevelCost * level;
-        internal static long CumulativeLevelCost(int level) => (BaseLevelCost / 2L) * level * (level + 1);
+        internal static long CumulativeLevelCost(int level) => BaseLevelCost / 2L * level * (level + 1);
         internal const int MaxLevel = 60; // was 60.
 
         internal const float ModifierAmount = 0.5f;
@@ -70,7 +70,7 @@ namespace SpectreMod.Content.Items.Charms
             TooltipLine progressLine = tooltips.FirstOrDefault(x => x.Mod == "Terraria" && x.Text.Contains(ProgressKey));
             if (progressLine != null)
             {
-                long progressToNextLevel = totalDamageModifier - CumulativeLevelCost(level + 1);
+                long progressToNextLevel = totalDamageModifier - CumulativeLevelCost(level);
                 long totalToNextLevel = LevelCost(level + 1);
                 double ratio = (double)progressToNextLevel / totalToNextLevel;
                 string percent = (100d * ratio).ToString("0.00");
@@ -119,6 +119,12 @@ namespace SpectreMod.Content.Items.Charms
             {
                 ++charmVortex.level;
             }
+        }
+        
+        public override void ResetEffects()
+        {
+            charmVortex = null;
+            IsActive = false;
         }
     }
 }
