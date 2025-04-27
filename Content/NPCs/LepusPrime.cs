@@ -36,6 +36,14 @@ namespace SpectreMod.Content.NPCs
 
             data = [0, 0, 0, 0, 0];
         }
+        public override bool CheckActive()
+        {
+            return false;
+        }
+        public override bool? CanFallThroughPlatforms()
+        {
+            return true;
+        }
 
         public static Vector2 Up(float amt) { return new Vector2(0, -amt); }
         public static Vector2 Down(float amt) { return new Vector2(0, amt); }
@@ -81,7 +89,7 @@ namespace SpectreMod.Content.NPCs
             if (NPC.velocity.X > 10) { NPC.velocity.X *= 0.99f; }
             if (NPC.collideY) { NPC.velocity.X += Towards(plrpos).X; NPC.velocity.X *= 0.93f; }
 
-            if (data[0] <= 0 && (NPC.collideX || NPC.collideY || distance > 80))
+            if (data[0] <= 0 && (NPC.collideX || NPC.collideY || distance > 20))
             {
                 
                 data[0] = Main.rand.Next(110, 220);
