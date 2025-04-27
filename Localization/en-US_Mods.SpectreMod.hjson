@@ -148,7 +148,29 @@ Items: {
 
 	CharmSol: {
 		DisplayName: Charm of the Sol
-		Tooltip: ""
+		Tooltip:
+			'''
+			Progress: [PROGRESS]%
+			Melee Damage Increase: [MeleeDMGinc]
+			'''
+	}
+
+	StardustCharm: {
+		DisplayName: Stardust Charm
+		Tooltip:
+			'''
+			Progress: [PROGRESS]%
+			Summon Damage Increase: [SummonDmgInc]
+			'''
+	}
+
+	CharmVortex: {
+		DisplayName: Charm Vortex
+		Tooltip:
+			'''
+			Progress: [PROGRESS]%
+			Range Damage Increase: [RangeDmgInc]
+			'''
 	}
 
 	DrakomireFang: {
@@ -171,13 +193,8 @@ Items: {
 		Tooltip:
 			'''
 			A Tool for a true terraria Streamer
-			Art by: callas
+			Art by "callas"
 			'''
-	}
-
-	StardustCharm: {
-		DisplayName: Stardust Charm
-		Tooltip: ""
 	}
 }
 

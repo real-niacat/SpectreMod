@@ -11,8 +11,6 @@ using System.Text;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.GameContent;
-using Terraria.GameContent.Bestiary;
-using Terraria.GameContent.NetModules;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
@@ -24,7 +22,8 @@ namespace SpectreMod.Content.Items.Charms
         
         internal const long BaseLevelCost = 400000L;
         internal static long LevelCost(int level) => BaseLevelCost * level;
-        internal const int MaxLevel = 60; // was 60.
+        internal static long CumulativeLevelCost(int level) => BaseLevelCost / 2L * level * (level + 1);
+        internal const int MaxLevel = 60;
         
         internal const float ModifierAmount = 0.5f;
         
@@ -42,7 +41,7 @@ namespace SpectreMod.Content.Items.Charms
         
         public override ModItem Clone(Item item)
         {
-            CharmSol clone = (CharmSol)base.Clone(item);
+            var clone = (CharmSol)base.Clone(item);
             clone.level = level;
             clone.totalDamageModifier = totalDamageModifier;
             return clone;
@@ -53,7 +52,7 @@ namespace SpectreMod.Content.Items.Charms
             modPlayer.charmSol = true;
             CharmSolPlayer charmSolPlayer = player.GetModPlayer<CharmSolPlayer>();
             charmSolPlayer.charmSol = this;
-            player.GetDamage(DamageClass.Melee) *= level * 0.1f;
+            player.GetDamage(DamageClass.Melee) *= 1 + level * 0.1f;
             player.GetModPlayer<CharmSolPlayer>().MeleeSize = 3;
             player.GetModPlayer<CharmSolPlayer>().PlayerSpeed = 1;
             player.GetModPlayer<CharmSolPlayer>().MountSpeed = 1;
@@ -66,14 +65,29 @@ namespace SpectreMod.Content.Items.Charms
             TooltipLine line = new TooltipLine(Mod, "Level", $"Level: {level}");
             line.OverrideColor = Color.Gold;
             tooltips.Add(line);
-            
-            TooltipLine line2 = new TooltipLine(Mod, "Damage", $"Damage: {totalDamageModifier}");
-            line2.OverrideColor = Color.Gold;
-            tooltips.Add(line2);
-            
-            TooltipLine line3 = new TooltipLine(Mod, "LevelCost", $"Level Cost: {LevelCost(level + 1)}");
-            line3.OverrideColor = Color.Gold;
-            tooltips.Add(line3);
+            string ProgressKey = "[PROGRESS]";
+            TooltipLine progressLine = tooltips.FirstOrDefault(x => x.Mod == "Terraria" && x.Text.Contains(ProgressKey));
+            if (progressLine != null)
+            {
+                if (level < MaxLevel)
+                {
+                    long progressToNextLevel = totalDamageModifier - CumulativeLevelCost(level);
+                    long totalToNextLevel = LevelCost(level + 1);
+                    double ratio = (double)progressToNextLevel / totalToNextLevel;
+                    string percent = (100D * ratio).ToString("0.00");
+                    progressLine.Text = progressLine.Text.Replace(ProgressKey, percent);
+                }
+                else
+                {
+                    progressLine.Text = string.Empty;
+                }
+                string damageKey = "[MeleeDMGinc]";
+                TooltipLine damageLine = tooltips.FirstOrDefault(x => x.Mod == "Terraria" && x.Text.Contains(damageKey));
+                if (damageLine != null)
+                {
+                    damageLine.Text = damageLine.Text.Replace(damageKey, $"{(level * 0.1f) * 100}%");
+                }
+            }
         }
 
         public override void SaveData(TagCompound tag)
@@ -86,14 +100,12 @@ namespace SpectreMod.Content.Items.Charms
         {
             level = tag.GetInt("level");
             if (level > MaxLevel)
-            {
                 level = MaxLevel;
-            }
             totalDamageModifier = tag.GetLong("totalDamage");
         }
         public override void NetSend(BinaryWriter writer)
         {
-            writer.Write((byte)level);
+            writer.Write(level);
             writer.Write(totalDamageModifier);
         }
         public override void NetReceive(BinaryReader reader)
@@ -127,6 +139,9 @@ namespace SpectreMod.Content.Items.Charms
         public int DamageAmt;
         public bool IsActive = false;
         
+        /// <summary>
+        /// <para/> Adappted code from <see href="https://github.com/CalamityTeam/CalamityModPublic/blob/1.4.4/Items/Accessories/ShatteredCommunity.cs">The Shattered Community</see> from the Calamity Mod.
+        /// </summary>
         internal void AccumulateDamageModifier(long damage)
         {
             if (charmSol is null)
@@ -134,15 +149,11 @@ namespace SpectreMod.Content.Items.Charms
             
             // Actually accumulate the damage.
             charmSol.totalDamageModifier += damage;
-            MeleeSizeMod =  charmSol.level;
-            DamageAmt = (int)charmSol.totalDamageModifier; 
-            if (charmSol.level < CharmSol.MaxLevel && charmSol.totalDamageModifier > CharmSol.LevelCost(charmSol.level + 1))
+            MeleeSizeMod = charmSol.level;
+            if (charmSol.level < CharmSol.MaxLevel && charmSol.totalDamageModifier > CharmSol.CumulativeLevelCost(charmSol.level + 1))
             {
                 ++charmSol.level;
-                charmSol.totalDamageModifier = 0L;
-                if (charmSol.level > CharmSol.MaxLevel)
-                    charmSol.level = CharmSol.MaxLevel;
-                    Main.NewText($"Charm Sol Level Up! {charmSol.level}");
+                Main.NewText($"Charm Sol Level Up! {charmSol.level}");
             }
         }
         
@@ -163,8 +174,8 @@ namespace SpectreMod.Content.Items.Charms
         {
             if (IsActive)
             {
-                Player.accRunSpeed *= 1 + (PlayerSpeed + (PlayerSpeedMod * 2f));
-                Player.maxRunSpeed *= 1 + (MountSpeed + (MountSpeedMod / 2f));
+                Player.accRunSpeed += 1 + (PlayerSpeed + (Player.maxRunSpeed / 3f));
+                Player.maxRunSpeed += 1 + (MountSpeed + (PlayerSpeedMod / 1.75f));
             }
             else
             {
