@@ -52,7 +52,7 @@ namespace SpectreMod.Content.Items.Charms
             modPlayer.charmSol = true;
             CharmSolPlayer charmSolPlayer = player.GetModPlayer<CharmSolPlayer>();
             charmSolPlayer.charmSol = this;
-            player.GetDamage(DamageClass.Melee) *= 1 + level * 0.1f;
+            player.GetDamage(DamageClass.Melee) += level * 0.125f;
             player.GetModPlayer<CharmSolPlayer>().MeleeSize = 3;
             player.GetModPlayer<CharmSolPlayer>().PlayerSpeed = 1;
             player.GetModPlayer<CharmSolPlayer>().MountSpeed = 1;
