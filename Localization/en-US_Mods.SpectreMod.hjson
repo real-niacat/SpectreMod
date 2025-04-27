@@ -173,6 +173,44 @@ Items: {
 			'''
 	}
 
+	CharmNebula: {
+		Tooltip:
+			'''
+			Progress: [PROGRESS]%
+			Magic Damage Increase: [MageDmgInc]
+			'''
+		DisplayName: Charm Nebula
+
+		DrakomireFang: {
+			DisplayName: Drakomire Fang
+			Tooltip: ""
+		}
+
+		DrakomireScale: {
+			DisplayName: Drakomire Scale
+			Tooltip: ""
+		}
+
+		PlanterasSeed: {
+			DisplayName: Planteras Seed
+			Tooltip: ""
+		}
+
+		HimboAxe: {
+			DisplayName: Himbo Axe
+			Tooltip:
+				'''
+				A Tool for a true terraria Streamer
+				Art by "callas"
+				'''
+		}
+	}
+
+	HimboAxe: {
+		DisplayName: Himbo Axe
+		Tooltip: ""
+	}
+
 	DrakomireFang: {
 		DisplayName: Drakomire Fang
 		Tooltip: ""
@@ -186,15 +224,6 @@ Items: {
 	PlanterasSeed: {
 		DisplayName: Planteras Seed
 		Tooltip: ""
-	}
-
-	HimboAxe: {
-		DisplayName: Himbo Axe
-		Tooltip:
-			'''
-			A Tool for a true terraria Streamer
-			Art by "callas"
-			'''
 	}
 }
 

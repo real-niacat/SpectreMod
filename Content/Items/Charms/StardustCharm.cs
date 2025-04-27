@@ -122,7 +122,7 @@ namespace SpectreMod.Content.Items.Charms
     }
     public class CharmStardustPlayer : ModPlayer
     {
-        public StardustCharm charmStardust = null;
+        internal StardustCharm charmStardust = null;
         public bool IsActive = false;
         public int SlotModifier = 0;
         public int ManaBoost = 0;
