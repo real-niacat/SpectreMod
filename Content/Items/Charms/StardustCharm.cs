@@ -1,7 +1,7 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using SpectreMod.Content.Buffs;
-using SpectreMod.Content.Materials;
+using SpectreMod.Content.Items.Materials;
 using SpectreMod.Core.usermodifier;
 using System;
 using System.Collections.Generic;

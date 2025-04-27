@@ -1,7 +1,7 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using SpectreMod.Content.Buffs;
-using SpectreMod.Content.Materials;
+using SpectreMod.Content.Items.Materials;
 using SpectreMod.Core.usermodifier;
 using System;
 using System.Collections.Generic;
@@ -104,6 +104,15 @@ namespace SpectreMod.Content.Items.Charms
         {
             level = reader.ReadInt32();
             totalDamageModifier = reader.ReadInt64();
+        }
+        
+        public override void AddRecipes()
+        {
+            Recipe recipe = CreateRecipe();
+            recipe.AddIngredient(ModContent.ItemType<PinkMatter>(), 10);
+            recipe.AddIngredient(ItemID.Ectoplasm, 50);
+            recipe.AddTile(TileID.LunarCraftingStation);
+            recipe.Register();
         }
     }
     public class CharmNebulaPlayer : ModPlayer
