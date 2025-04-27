@@ -118,7 +118,7 @@ namespace SpectreMod.Content.Items.Charms
         {
             Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ModContent.ItemType<DrakomireFang>(), 30);
-            recipe.AddIngredient(ModContent.ItemType<DrakomireScale>(), 20);
+            recipe.AddIngredient(ModContent.ItemType<SolarScales>(), 20);
             recipe.AddIngredient(ItemID.LunarTabletFragment, 25);
             recipe.AddTile(TileID.LunarCraftingStation);
             recipe.Register();

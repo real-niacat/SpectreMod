@@ -119,6 +119,16 @@ namespace SpectreMod.Content.Items.Charms
             line.OverrideColor = Color.Magenta;
             tooltips.Add(line);
         }
+        public override void AddRecipes()
+        {
+            Recipe recipe = CreateRecipe();
+            recipe.AddIngredient(ModContent.ItemType<StarCells>(), 20);
+            recipe.AddIngredient(ModContent.ItemType<StardustTendril>(), 10);
+            recipe.AddIngredient(ItemID.ShroomiteBar, 5);
+            recipe.AddIngredient(ItemID.LunarBar, 5);
+            recipe.AddTile(TileID.LunarCraftingStation);
+            recipe.Register();
+        }
     }
     public class CharmStardustPlayer : ModPlayer
     {

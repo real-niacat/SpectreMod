@@ -71,18 +71,25 @@ namespace SpectreMod.Content.Items.Charms
             TooltipLine progressLine = tooltips.FirstOrDefault(x => x.Mod == "Terraria" && x.Text.Contains(ProgressKey));
             if (progressLine != null)
             {
-                long progressToNextLevel = totalDamageModifier - CumulativeLevelCost(level);
-                long totalToNextLevel = LevelCost(level + 1);
-                double ratio = (double)progressToNextLevel / totalToNextLevel;
-                string percent = (100d * ratio).ToString("0.00");
-                progressLine.Text = progressLine.Text.Replace(ProgressKey, percent);
-            }
-            string damageKey = "[MageDmgInc]";
-            TooltipLine damageLine = tooltips.FirstOrDefault(x => x.Mod == "Terraria" && x.Text.Contains(damageKey));
-                if (damageLine != null)
+                if (level < MaxLevel)
                 {
-                    damageLine.Text = damageLine.Text.Replace(damageKey, $"{(level * 0.125f) * 100}%");
+                    long progressToNextLevel = totalDamageModifier - CumulativeLevelCost(level);
+                    long totalToNextLevel = LevelCost(level + 1);
+                    double ratio = (double)progressToNextLevel / totalToNextLevel;
+                    string percent = (100D * ratio).ToString("0.00");
+                    progressLine.Text = progressLine.Text.Replace(ProgressKey, percent);
                 }
+                else
+                {
+                    progressLine.Text = string.Empty;
+                }
+                string damageKey = "[MageDmgInc]";
+                TooltipLine damageLine = tooltips.FirstOrDefault(x => x.Mod == "Terraria" && x.Text.Contains(damageKey));
+                    if (damageLine != null)
+                    {
+                        damageLine.Text = damageLine.Text.Replace(damageKey, $"{(level * 0.125f) * 100}%");
+                    }
+            }
         }
 
         public override void SaveData(TagCompound tag)
@@ -110,6 +117,7 @@ namespace SpectreMod.Content.Items.Charms
         {
             Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ModContent.ItemType<PinkMatter>(), 10);
+            recipe.AddIngredient(ModContent.ItemType<NebulaBeastClaw>(), 15);
             recipe.AddIngredient(ItemID.Ectoplasm, 50);
             recipe.AddTile(TileID.LunarCraftingStation);
             recipe.Register();

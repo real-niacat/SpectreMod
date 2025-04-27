@@ -2,9 +2,9 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace SpectreMod.Content.Materials
+namespace SpectreMod.Content.Items.Materials
 {
-    public class SolarScales : ModItem
+    public class StardustTendril : ModItem
     {
         public override string Texture => "SpectreMod/Common/PlaceHolders/PlaceHolder";
 

@@ -2,6 +2,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using SpectreMod.Content.Buffs;
 using SpectreMod.Content.Items.Materials;
+using SpectreMod.Content.Items.Placeables;
 using SpectreMod.Core.usermodifier;
 using System;
 using System.Collections.Generic;
@@ -70,11 +71,18 @@ namespace SpectreMod.Content.Items.Charms
             TooltipLine progressLine = tooltips.FirstOrDefault(x => x.Mod == "Terraria" && x.Text.Contains(ProgressKey));
             if (progressLine != null)
             {
-                long progressToNextLevel = totalDamageModifier - CumulativeLevelCost(level);
-                long totalToNextLevel = LevelCost(level + 1);
-                double ratio = (double)progressToNextLevel / totalToNextLevel;
-                string percent = (100d * ratio).ToString("0.00");
-                progressLine.Text = progressLine.Text.Replace(ProgressKey, percent);
+                if (level < MaxLevel)
+                {
+                    long progressToNextLevel = totalDamageModifier - CumulativeLevelCost(level);
+                    long totalToNextLevel = LevelCost(level + 1);
+                    double ratio = (double)progressToNextLevel / totalToNextLevel;
+                    string percent = (100D * ratio).ToString("0.00");
+                    progressLine.Text = progressLine.Text.Replace(ProgressKey, percent);
+                }
+                else
+                {
+                    progressLine.Text = string.Empty;
+                }
             }
             string damageKey = "[RangeDmgInc]";
                 TooltipLine damageLine = tooltips.FirstOrDefault(x => x.Mod == "Terraria" && x.Text.Contains(damageKey));
@@ -103,6 +111,15 @@ namespace SpectreMod.Content.Items.Charms
         {
             level = reader.ReadInt32();
             totalDamageModifier = reader.ReadInt64();
+        }
+        public override void AddRecipes()
+        {
+            Recipe recipe = CreateRecipe();
+            recipe.AddIngredient(ModContent.ItemType<CelestialLarva>(), 75);
+            recipe.AddIngredient(ModContent.ItemType<VortexGunMechanism>(), 30);
+            recipe.AddIngredient(ModContent.ItemType<VortexBar>(), 47);
+            recipe.AddTile(TileID.LunarCraftingStation);
+            recipe.Register();
         }
     }
     public class CharmVortexPlayer : ModPlayer

@@ -180,35 +180,15 @@ Items: {
 			Magic Damage Increase: [MageDmgInc]
 			'''
 		DisplayName: Charm Nebula
-
-		DrakomireFang: {
-			DisplayName: Drakomire Fang
-			Tooltip: ""
-		}
-
-		DrakomireScale: {
-			DisplayName: Drakomire Scale
-			Tooltip: ""
-		}
-
-		PlanterasSeed: {
-			DisplayName: Planteras Seed
-			Tooltip: ""
-		}
-
-		HimboAxe: {
-			DisplayName: Himbo Axe
-			Tooltip:
-				'''
-				A Tool for a true terraria Streamer
-				Art by "callas"
-				'''
-		}
 	}
 
 	HimboAxe: {
 		DisplayName: Himbo Axe
-		Tooltip: ""
+		Tooltip:
+			'''
+			A Tool for a true terraria Streamer
+			Art by "callas"
+			'''
 	}
 
 	DrakomireFang: {
@@ -216,8 +196,43 @@ Items: {
 		Tooltip: ""
 	}
 
-	DrakomireScale: {
-		DisplayName: Drakomire Scale
+	NebulaBeastClaw: {
+		DisplayName: Nebula Beast Claw
+		Tooltip: ""
+	}
+
+	PinkMatter: {
+		DisplayName: Pink Matter
+		Tooltip: ""
+	}
+
+	StarCells: {
+		DisplayName: Star Cells
+		Tooltip: ""
+	}
+
+	StardustTendril: {
+		DisplayName: Stardust Tendril
+		Tooltip: ""
+	}
+
+	CelestialLarva: {
+		Tooltip: ""
+		DisplayName: Celestial Larva
+	}
+
+	VortexGunMechanism: {
+		DisplayName: Vortex Gun Mechanism
+		Tooltip: ""
+	}
+
+	VortexBar: {
+		DisplayName: Vortex Bar
+		Tooltip: ""
+	}
+
+	SolarScales: {
+		DisplayName: Solar Scales
 		Tooltip: ""
 	}
 
