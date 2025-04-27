@@ -55,21 +55,34 @@ namespace SpectreMod.Content.Items.Charms
     {
         public bool lunatic;
         public Item lunacy_charm;
+        public int cooldown = 0;
+
+        public bool ReadyToLifesteal { get { return cooldown <= 0; } }
 
         public override void ResetEffects()
         {
             lunatic = false;
         }
 
+        public override void PostUpdate()
+        {
+            cooldown--;
+            cooldown = cooldown < 0 ? 0 : cooldown;
+        }
+
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
             if (lunatic && damageDone > 10)
             {
-                Vector2 calculatedVelocity = target.Center - Player.Center;
-                calculatedVelocity.Normalize();
-                calculatedVelocity *= 15;
-                Projectile p = Projectile.NewProjectileDirect(Player.GetSource_Accessory(lunacy_charm), Player.Center, calculatedVelocity, ProjectileID.VampireKnife, damageDone / 2, 3);
-                p.extraUpdates = 1;
+                if (ReadyToLifesteal)
+                {
+                    cooldown = 8;
+                    Vector2 calculatedVelocity = target.Center - Player.Center;
+                    calculatedVelocity.Normalize();
+                    calculatedVelocity *= 15;
+                    Projectile p = Projectile.NewProjectileDirect(Player.GetSource_Accessory(lunacy_charm), Player.Center, calculatedVelocity, ProjectileID.VampireKnife, damageDone / 2, 3);
+                    p.extraUpdates = 1;
+                }
 
 
                 if ((Main.rand.Next(100)+1) < 20)
@@ -80,7 +93,7 @@ namespace SpectreMod.Content.Items.Charms
                     Vector2 vel = target.Center - skyPosition;
                     vel.Normalize();
                     vel *= 7;
-                    Projectile meteor = Projectile.NewProjectileDirect(Player.GetSource_Accessory(lunacy_charm), skyPosition, vel, ProjectileID.Meteor1, damageDone * 2, 3);
+                    Projectile.NewProjectileDirect(Player.GetSource_Accessory(lunacy_charm), skyPosition, vel, ProjectileID.Meteor1, damageDone * 2, 3);
                 }
             }
         }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Xna.Framework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,25 +22,39 @@ namespace SpectreMod.Common.Players
             }
         }
 
-        public override void PostUpdate()
+        public void GenericText(string text)
         {
-            base.PostUpdate();
-            if (Enabled)
-            {
-                Stakes += 1 / 60;
-            } else
-            {
-                Stakes -= 2 / 60;
-            }
+            Rectangle pos = new Rectangle((int)Player.Center.X, (int)Player.Center.Y, 1, 1);
+            Color textColor = new Color(255, 255, 255);
+            CombatText.NewText(pos, textColor, text);
+        }
 
-            Stakes = Stakes < 0 ? 0 : Stakes;
+        public void ClampStakes()
+        {
+            Stakes = Stakes < -200 ? -200 : Stakes;
             Stakes = Stakes > 200 ? 200 : Stakes;
         }
 
-        public override void DrawEffects(PlayerDrawSet drawInfo, ref float r, ref float g, ref float b, ref float a, ref bool fullBright)
+        public override void OnHurt(Player.HurtInfo info)
         {
-            base.DrawEffects(drawInfo, ref r, ref g, ref b, ref a, ref fullBright);
-            r += Stakes / 100;
+            base.OnHurt(info);
+            if (Enabled) { Stakes += (float)Math.Pow(info.Damage, 0.8f); }
+        }
+
+        public int frameCount = 0;
+        public override void PostUpdate()
+        {
+            frameCount++;
+            base.PostUpdate();
+            if (Enabled) { Stakes -= Player.lifeRegen / 10.0f; }
+            if (!Enabled) { Stakes /= 0.97f; }
+            ClampStakes();
+            if (frameCount % 60 == 0)
+            {
+                GenericText(Stakes.ToString());
+            }
+            
+            
         }
     }
 }
