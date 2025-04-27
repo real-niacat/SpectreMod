@@ -57,7 +57,7 @@ namespace SpectreMod.Content.Items.Charms
             modPlayer.charmStardust = true;
             CharmStardustPlayer charmStardustPlayer = player.GetModPlayer<CharmStardustPlayer>();
             charmStardustPlayer.charmStardust = this;
-            player.GetDamage(DamageClass.Summon) *= 1 + level * 0.1f;
+            player.GetDamage(DamageClass.Summon) += level * 0.125f;
             player.maxMinions += 1 + (level / 2);
             player.statManaMax2 += level * 5;
             player.statMana += level * 5;
@@ -112,7 +112,7 @@ namespace SpectreMod.Content.Items.Charms
                 TooltipLine damageLine = tooltips.FirstOrDefault(x => x.Mod == "Terraria" && x.Text.Contains(damageKey));
                 if (damageLine != null)
                 {
-                    damageLine.Text = damageLine.Text.Replace(damageKey, $"{(level * 0.1f) * 100}%");
+                    damageLine.Text = damageLine.Text.Replace(damageKey, $"{(level * 0.125f) * 100}%");
                 }
             }
             line = new TooltipLine(Mod, "Level", $"Bonus Minion Slots: {1 + (level / 2)}");
