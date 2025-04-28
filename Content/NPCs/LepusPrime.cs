@@ -20,12 +20,14 @@ namespace SpectreMod.Content.NPCs
         public int HalfDamage { get { return NPC.damage / 2; } }
         public int DoubleDamage { get { return NPC.damage * 2; } }
         public int Timer = 0;
+        public float KnockBackResist = 0.25f;
         public override void SetDefaults()
         {
             base.SetDefaults();
             NPC.lifeMax = 300000;
             NPC.width = 120;
             NPC.height = 45;
+            NPC.knockBackResist = KnockBackResist;
 
             NPC.defense = 10;
             NPC.damage = 125;
