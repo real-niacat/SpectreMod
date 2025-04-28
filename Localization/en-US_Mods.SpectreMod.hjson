@@ -240,6 +240,11 @@ Items: {
 		DisplayName: Planteras Seed
 		Tooltip: ""
 	}
+
+	StoneSlabPlatform: {
+		Tooltip: ""
+		DisplayName: Stone Slab Platform
+	}
 }
 
 DropConditions: {
