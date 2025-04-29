@@ -28,7 +28,7 @@ namespace SpectreMod.Content.NPCs
             NPC.width = 120;
             NPC.height = 45;
             NPC.knockBackResist = KnockBackResist;
-            NPC.immortal = true;
+            NPC.immortal = false;
             NPC.teleportStyle = 4;
 
             NPC.defense = 10;
