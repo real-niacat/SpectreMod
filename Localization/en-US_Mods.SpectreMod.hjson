@@ -1,11 +1,11 @@
 Items: {
 	SlimeFragment: {
 		Tooltip: Could this be part of something greater?
-		DisplayName: Charm of Slime
+		DisplayName: Slime Shard
 	}
 
 	EoCFragment: {
-		DisplayName: Charm of Sight
+		DisplayName: Shard of Sight
 		Tooltip:
 			'''
 			I mean this must have some use for sure
@@ -14,7 +14,7 @@ Items: {
 	}
 
 	EvilFragment: {
-		DisplayName: Charm of the Tainted
+		DisplayName: Shard of the Tainted
 		Tooltip:
 			'''
 			This item has a...
@@ -23,7 +23,7 @@ Items: {
 	}
 
 	QueenBeeFragment: {
-		DisplayName: Charm of the Swarm
+		DisplayName: Shard of the Swarm
 		Tooltip:
 			'''
 			Smells rather sweet
@@ -32,12 +32,12 @@ Items: {
 	}
 
 	SkeletronFragment: {
-		DisplayName: Charm of Death
+		DisplayName: Shard of Death
 		Tooltip: ""
 	}
 
 	DeerClopsFragment: {
-		DisplayName: Charm of Starvation
+		DisplayName: Shard of Starvation
 		Tooltip:
 			'''
 			This one seems to have...
@@ -46,57 +46,57 @@ Items: {
 	}
 
 	WoFFragment: {
-		DisplayName: Charm of Flesh
+		DisplayName: Shard of Flesh
 		Tooltip: ""
 	}
 
 	QueenSlimeFragment: {
-		DisplayName: Charm of the Holy Slime
+		DisplayName: Shard of the Holy Slime
 		Tooltip: ""
 	}
 
 	TwinsFragment: {
-		DisplayName: Charm of Knowledge
+		DisplayName: Shard of Knowledge
 		Tooltip: ""
 	}
 
 	DestroyerFragment: {
-		DisplayName: Charm of Annihilation
+		DisplayName: Shard of Annihilation
 		Tooltip: ""
 	}
 
 	SkeletronPrimeFragment: {
-		DisplayName: Charm of Inovation
+		DisplayName: Shard of Inovation
 		Tooltip: ""
 	}
 
 	PlanteraFragment: {
-		DisplayName: Charm of Nature
+		DisplayName: Shard of Nature
 		Tooltip: ""
 	}
 
 	GolemFragment: {
-		DisplayName: Charm of Primalcy
+		DisplayName: Shard of Primalcy
 		Tooltip: ""
 	}
 
 	DukeFishronFragment: {
-		DisplayName: Charm of the Ocean
+		DisplayName: Shard of the Ocean
 		Tooltip: ""
 	}
 
 	EmpressOfLightFragment: {
-		DisplayName: Charm of Light
+		DisplayName: Shard of Light
 		Tooltip: ""
 	}
 
 	LunaticCultistFragment: {
-		DisplayName: Charm of Devotion
+		DisplayName: Shard of Devotion
 		Tooltip: ""
 	}
 
 	MoonLordFragment: {
-		DisplayName: Charm of the Moon
+		DisplayName: Shard of the Moon
 		Tooltip: ""
 	}
 
