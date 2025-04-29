@@ -28,6 +28,8 @@ namespace SpectreMod.Content.NPCs
             NPC.width = 120;
             NPC.height = 45;
             NPC.knockBackResist = KnockBackResist;
+            NPC.immortal = true;
+            NPC.teleportStyle = 4;
 
             NPC.defense = 10;
             NPC.damage = 125;
@@ -76,7 +78,7 @@ namespace SpectreMod.Content.NPCs
             Player player = Main.player[NPC.FindClosestPlayer(out distance)];
             Vector2 plrpos = player.position;
 
-            if (Timer % 12 == 0)
+            if (Timer % 60 == 0)
             {
                 int chosenProjectile = ProjectileID.DeathLaser;
                 int speed = 15;
@@ -90,6 +92,7 @@ namespace SpectreMod.Content.NPCs
 
             if (NPC.velocity.X > 10) { NPC.velocity.X *= 0.99f; }
             if (NPC.collideY) { NPC.velocity.X += Towards(plrpos).X; NPC.velocity.X *= 0.93f; }
+            if (player.position.Y < NPC.position.Y) { NPC.velocity.Y -= 0.1f; }
 
             if (data[0] <= 0 && (NPC.collideX || NPC.collideY || distance > 20))
             {
