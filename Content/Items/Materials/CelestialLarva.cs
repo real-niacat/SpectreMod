@@ -6,7 +6,6 @@ namespace SpectreMod.Content.Items.Materials
 {
     public class CelestialLarva : ModItem
     {
-        public override string Texture => "SpectreMod/Common/PlaceHolders/PlaceHolder";
 
         public override void SetDefaults()
         {
