@@ -28,6 +28,7 @@ namespace SpectreMod.Content.NPCs
             NPC.width = 120;
             NPC.height = 45;
             NPC.knockBackResist = KnockBackResist;
+            NPC.immortal = true;
 
             NPC.defense = 10;
             NPC.damage = 125;
@@ -92,7 +93,7 @@ namespace SpectreMod.Content.NPCs
             if (NPC.collideY) { NPC.velocity.X += Towards(plrpos).X; NPC.velocity.X *= 0.93f; }
             if (player.position.Y < NPC.position.Y) { NPC.velocity.Y -= 0.1f; }
 
-            if (data[0] <= 0 && (NPC.collideX || NPC.collideY || distance > 20))
+            if (data[0] <= 0 && (NPC.collideX || NPC.collideY || distance > 80))
             {
                 
                 data[0] = Main.rand.Next(110, 220);
