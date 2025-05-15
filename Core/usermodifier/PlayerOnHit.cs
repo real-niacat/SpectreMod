@@ -18,6 +18,7 @@ namespace SpectreMod.Core.usermodifier
         public bool charmSol = false;
         public bool charmStardust = false;
         public bool charmVortex = false;
+        public bool charmNebula = false;
         public override void OnHitNPC( NPC target, NPC.HitInfo hit, int damageDone)
         {
             if (Player.whoAmI != Main.myPlayer)
@@ -33,6 +34,10 @@ namespace SpectreMod.Core.usermodifier
             if (charmVortex)
             {
                 Player.GetModPlayer<CharmVortexPlayer>().AccumulateDamageModifier(damageDone);
+            }
+            if (charmNebula)
+            {
+                Player.GetModPlayer<CharmNebulaPlayer>().AccumulateDamageModifier(damageDone);
             }
         }
     }

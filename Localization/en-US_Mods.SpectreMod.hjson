@@ -1,11 +1,11 @@
 Items: {
 	SlimeFragment: {
 		Tooltip: Could this be part of something greater?
-		DisplayName: Charm of Slime
+		DisplayName: Slime Shard
 	}
 
 	EoCFragment: {
-		DisplayName: Charm of Sight
+		DisplayName: Shard of Sight
 		Tooltip:
 			'''
 			I mean this must have some use for sure
@@ -14,7 +14,7 @@ Items: {
 	}
 
 	EvilFragment: {
-		DisplayName: Charm of the Tainted
+		DisplayName: Shard of the Tainted
 		Tooltip:
 			'''
 			This item has a...
@@ -23,7 +23,7 @@ Items: {
 	}
 
 	QueenBeeFragment: {
-		DisplayName: Charm of the Swarm
+		DisplayName: Shard of the Swarm
 		Tooltip:
 			'''
 			Smells rather sweet
@@ -32,12 +32,12 @@ Items: {
 	}
 
 	SkeletronFragment: {
-		DisplayName: Charm of Death
+		DisplayName: Shard of Death
 		Tooltip: ""
 	}
 
 	DeerClopsFragment: {
-		DisplayName: Charm of Starvation
+		DisplayName: Shard of Starvation
 		Tooltip:
 			'''
 			This one seems to have...
@@ -46,57 +46,57 @@ Items: {
 	}
 
 	WoFFragment: {
-		DisplayName: Charm of Flesh
+		DisplayName: Shard of Flesh
 		Tooltip: ""
 	}
 
 	QueenSlimeFragment: {
-		DisplayName: Charm of the Holy Slime
+		DisplayName: Shard of the Holy Slime
 		Tooltip: ""
 	}
 
 	TwinsFragment: {
-		DisplayName: Charm of Knowledge
+		DisplayName: Shard of Knowledge
 		Tooltip: ""
 	}
 
 	DestroyerFragment: {
-		DisplayName: Charm of Annihilation
+		DisplayName: Shard of Annihilation
 		Tooltip: ""
 	}
 
 	SkeletronPrimeFragment: {
-		DisplayName: Charm of Inovation
+		DisplayName: Shard of Inovation
 		Tooltip: ""
 	}
 
 	PlanteraFragment: {
-		DisplayName: Charm of Nature
+		DisplayName: Shard of Nature
 		Tooltip: ""
 	}
 
 	GolemFragment: {
-		DisplayName: Charm of Primalcy
+		DisplayName: Shard of Primalcy
 		Tooltip: ""
 	}
 
 	DukeFishronFragment: {
-		DisplayName: Charm of the Ocean
+		DisplayName: Shard of the Ocean
 		Tooltip: ""
 	}
 
 	EmpressOfLightFragment: {
-		DisplayName: Charm of Light
+		DisplayName: Shard of Light
 		Tooltip: ""
 	}
 
 	LunaticCultistFragment: {
-		DisplayName: Charm of Devotion
+		DisplayName: Shard of Devotion
 		Tooltip: ""
 	}
 
 	MoonLordFragment: {
-		DisplayName: Charm of the Moon
+		DisplayName: Shard of the Moon
 		Tooltip: ""
 	}
 
@@ -156,7 +156,7 @@ Items: {
 	}
 
 	StardustCharm: {
-		DisplayName: Stardust Charm
+		DisplayName: Charm of Stardust
 		Tooltip:
 			'''
 			Progress: [PROGRESS]%
@@ -165,11 +165,29 @@ Items: {
 	}
 
 	CharmVortex: {
-		DisplayName: Charm Vortex
+		DisplayName: Charm of the Vortex
 		Tooltip:
 			'''
 			Progress: [PROGRESS]%
 			Range Damage Increase: [RangeDmgInc]
+			'''
+	}
+
+	CharmNebula: {
+		Tooltip:
+			'''
+			Progress: [PROGRESS]%
+			Magic Damage Increase: [MageDmgInc]
+			'''
+		DisplayName: Charm of the Everglowing Nebula
+	}
+
+	HimboAxe: {
+		DisplayName: Himbo Axe
+		Tooltip:
+			'''
+			A Tool for a true terraria Streamer
+			Art by: callas
 			'''
 	}
 
@@ -178,8 +196,43 @@ Items: {
 		Tooltip: ""
 	}
 
-	DrakomireScale: {
-		DisplayName: Drakomire Scale
+	NebulaBeastClaw: {
+		DisplayName: Nebula Beast Claw
+		Tooltip: ""
+	}
+
+	PinkMatter: {
+		DisplayName: Pink Matter
+		Tooltip: ""
+	}
+
+	StarCells: {
+		DisplayName: Star Cells
+		Tooltip: ""
+	}
+
+	StardustTendril: {
+		DisplayName: Stardust Tendril
+		Tooltip: ""
+	}
+
+	CelestialLarva: {
+		Tooltip: ""
+		DisplayName: Celestial Larva
+	}
+
+	VortexGunMechanism: {
+		DisplayName: Vortex Gun Mechanism
+		Tooltip: ""
+	}
+
+	VortexBar: {
+		DisplayName: Vortex Bar
+		Tooltip: ""
+	}
+
+	SolarScales: {
+		DisplayName: Solar Scales
 		Tooltip: ""
 	}
 
@@ -188,13 +241,9 @@ Items: {
 		Tooltip: ""
 	}
 
-	HimboAxe: {
-		DisplayName: Himbo Axe
-		Tooltip:
-			'''
-			A Tool for a true terraria Streamer
-			Art by "callas"
-			'''
+	StoneSlabPlatform: {
+		Tooltip: ""
+		DisplayName: Stone Slab Platform
 	}
 }
 
@@ -227,3 +276,4 @@ Buffs: {
 }
 
 NPCs.LepusPrime.DisplayName: Lepus Prime
+Projectiles.LepusPrimeEgg.DisplayName: Lepus Prime Egg

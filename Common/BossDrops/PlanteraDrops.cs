@@ -1,5 +1,5 @@
 using SpectreMod.Content.Items.CharmsFragments;
-using SpectreMod.Content.Materials;
+using SpectreMod.Content.Items.Materials;
 using SpectreMod.Core.DropConditions;
 using Terraria;
 using Terraria.GameContent.ItemDropRules;

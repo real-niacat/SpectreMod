@@ -20,12 +20,15 @@ namespace SpectreMod.Content.NPCs
         public int HalfDamage { get { return NPC.damage / 2; } }
         public int DoubleDamage { get { return NPC.damage * 2; } }
         public int Timer = 0;
+        public float KnockBackResist = 0f;
         public override void SetDefaults()
         {
             base.SetDefaults();
             NPC.lifeMax = 300000;
             NPC.width = 120;
             NPC.height = 45;
+            NPC.knockBackResist = KnockBackResist;
+            NPC.immortal = true;
 
             NPC.defense = 10;
             NPC.damage = 125;
@@ -35,6 +38,14 @@ namespace SpectreMod.Content.NPCs
            
 
             data = [0, 0, 0, 0, 0];
+        }
+        public override bool CheckActive()
+        {
+            return false;
+        }
+        public override bool? CanFallThroughPlatforms()
+        {
+            return true;
         }
 
         public static Vector2 Up(float amt) { return new Vector2(0, -amt); }
@@ -66,7 +77,7 @@ namespace SpectreMod.Content.NPCs
             Player player = Main.player[NPC.FindClosestPlayer(out distance)];
             Vector2 plrpos = player.position;
 
-            if (Timer % 12 == 0)
+            if (Timer % 60 == 0)
             {
                 int chosenProjectile = ProjectileID.DeathLaser;
                 int speed = 15;
@@ -80,6 +91,7 @@ namespace SpectreMod.Content.NPCs
 
             if (NPC.velocity.X > 10) { NPC.velocity.X *= 0.99f; }
             if (NPC.collideY) { NPC.velocity.X += Towards(plrpos).X; NPC.velocity.X *= 0.93f; }
+            if (player.position.Y < NPC.position.Y) { NPC.velocity.Y -= 0.1f; }
 
             if (data[0] <= 0 && (NPC.collideX || NPC.collideY || distance > 80))
             {

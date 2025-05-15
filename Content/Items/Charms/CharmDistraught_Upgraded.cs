@@ -1,5 +1,5 @@
 ﻿using SpectreMod.Content.Items.Charms;
-using SpectreMod.Content.Materials;
+using SpectreMod.Content.Items.Materials;
 using SpectreMod.Core.usermodifier;
 using SpectreMod.Core.SpecialGroups;
 using System;

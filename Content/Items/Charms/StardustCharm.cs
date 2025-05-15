@@ -1,7 +1,7 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using SpectreMod.Content.Buffs;
-using SpectreMod.Content.Materials;
+using SpectreMod.Content.Items.Materials;
 using SpectreMod.Core.usermodifier;
 using System;
 using System.Collections.Generic;
@@ -57,7 +57,7 @@ namespace SpectreMod.Content.Items.Charms
             modPlayer.charmStardust = true;
             CharmStardustPlayer charmStardustPlayer = player.GetModPlayer<CharmStardustPlayer>();
             charmStardustPlayer.charmStardust = this;
-            player.GetDamage(DamageClass.Summon) *= 1 + level * 0.1f;
+            player.GetDamage(DamageClass.Summon) += level * 0.125f;
             player.maxMinions += 1 + (level / 2);
             player.statManaMax2 += level * 5;
             player.statMana += level * 5;
@@ -112,17 +112,27 @@ namespace SpectreMod.Content.Items.Charms
                 TooltipLine damageLine = tooltips.FirstOrDefault(x => x.Mod == "Terraria" && x.Text.Contains(damageKey));
                 if (damageLine != null)
                 {
-                    damageLine.Text = damageLine.Text.Replace(damageKey, $"{(level * 0.1f) * 100}%");
+                    damageLine.Text = damageLine.Text.Replace(damageKey, $"{(level * 0.125f) * 100}%");
                 }
             }
             line = new TooltipLine(Mod, "Level", $"Bonus Minion Slots: {1 + (level / 2)}");
             line.OverrideColor = Color.Magenta;
             tooltips.Add(line);
         }
+        public override void AddRecipes()
+        {
+            Recipe recipe = CreateRecipe();
+            recipe.AddIngredient(ModContent.ItemType<StarCells>(), 20);
+            recipe.AddIngredient(ModContent.ItemType<StardustTendril>(), 10);
+            recipe.AddIngredient(ItemID.ShroomiteBar, 5);
+            recipe.AddIngredient(ItemID.LunarBar, 5);
+            recipe.AddTile(TileID.LunarCraftingStation);
+            recipe.Register();
+        }
     }
     public class CharmStardustPlayer : ModPlayer
     {
-        public StardustCharm charmStardust = null;
+        internal StardustCharm charmStardust = null;
         public bool IsActive = false;
         public int SlotModifier = 0;
         public int ManaBoost = 0;

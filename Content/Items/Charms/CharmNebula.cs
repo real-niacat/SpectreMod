@@ -2,7 +2,6 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using SpectreMod.Content.Buffs;
 using SpectreMod.Content.Items.Materials;
-using SpectreMod.Content.Items.Placeables;
 using SpectreMod.Core.usermodifier;
 using System;
 using System.Collections.Generic;
@@ -23,11 +22,11 @@ using Terraria.UI.Chat;
 
 namespace SpectreMod.Content.Items.Charms
 {
-    public class CharmVortex : ModItem
+    public class CharmNebula : ModItem
     {
         internal const long BaseLevelCost = 400000L;
         internal static long LevelCost(int level) => BaseLevelCost * level;
-        internal static long CumulativeLevelCost(int level) => BaseLevelCost / 2L * level * (level + 1);
+        internal static long CumulativeLevelCost(int level) => (BaseLevelCost / 2L) * level * (level + 1);
         internal const int MaxLevel = 60; // was 60.
 
         internal const float ModifierAmount = 0.5f;
@@ -46,26 +45,27 @@ namespace SpectreMod.Content.Items.Charms
         
         public override ModItem Clone(Item item)
         {
-            CharmVortex clone = (CharmVortex)base.Clone(item);
+            CharmNebula clone = (CharmNebula)base.Clone(item);
             clone.level = level;
             clone.totalDamageModifier = totalDamageModifier;
             return clone;
         }
-        
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
             SpectrePlayermod modPlayer = player.GetModPlayer<SpectrePlayermod>();
-            modPlayer.charmVortex = true;
-            CharmVortexPlayer charmVortexPlayer = player.GetModPlayer<CharmVortexPlayer>();
-            charmVortexPlayer.charmVortex = this;
-            player.GetDamage(DamageClass.Ranged) += level * 0.125f;
-            player.GetModPlayer<CharmVortexPlayer>().IsActive = true;
+            modPlayer.charmNebula = true;
+            CharmNebulaPlayer charmNebulaPlayer = player.GetModPlayer<CharmNebulaPlayer>();
+            charmNebulaPlayer.charmNebula = this;
+            player.GetDamage(DamageClass.Magic) += level * 0.125f;
+            player.statManaMax2 += level * 5;
+            player.statMana += level * 5;
+            player.GetModPlayer<CharmNebulaPlayer>().IsActive = true;
         }
-
+        
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            TooltipLine line = new TooltipLine(Mod, "CharmVortex", $"Level: {level}");
-            line.OverrideColor = Color.LimeGreen;
+            TooltipLine line = new TooltipLine(Mod, "CharmNebula", $"Level: {level}/{MaxLevel}");
+            line.OverrideColor = Color.Cyan;
             tooltips.Add(line);
             string ProgressKey = "[PROGRESS]";
             TooltipLine progressLine = tooltips.FirstOrDefault(x => x.Mod == "Terraria" && x.Text.Contains(ProgressKey));
@@ -83,15 +83,15 @@ namespace SpectreMod.Content.Items.Charms
                 {
                     progressLine.Text = string.Empty;
                 }
-            }
-            string damageKey = "[RangeDmgInc]";
+                string damageKey = "[MageDmgInc]";
                 TooltipLine damageLine = tooltips.FirstOrDefault(x => x.Mod == "Terraria" && x.Text.Contains(damageKey));
-                if (damageLine != null)
-                {
-                    damageLine.Text = damageLine.Text.Replace(damageKey, $"{(level * 0.125f) * 100}%");
-                }
+                    if (damageLine != null)
+                    {
+                        damageLine.Text = damageLine.Text.Replace(damageKey, $"{(level * 0.125f) * 100}%");
+                    }
+            }
         }
-        
+
         public override void SaveData(TagCompound tag)
         {
             tag.Add("level", level);
@@ -112,35 +112,33 @@ namespace SpectreMod.Content.Items.Charms
             level = reader.ReadInt32();
             totalDamageModifier = reader.ReadInt64();
         }
+        
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();
-            recipe.AddIngredient(ModContent.ItemType<CelestialLarva>(), 75);
-            recipe.AddIngredient(ModContent.ItemType<VortexGunMechanism>(), 30);
-            recipe.AddIngredient(ModContent.ItemType<VortexBar>(), 47);
+            recipe.AddIngredient(ModContent.ItemType<PinkMatter>(), 10);
+            recipe.AddIngredient(ModContent.ItemType<NebulaBeastClaw>(), 15);
+            recipe.AddIngredient(ItemID.Ectoplasm, 50);
             recipe.AddTile(TileID.LunarCraftingStation);
             recipe.Register();
         }
     }
-    public class CharmVortexPlayer : ModPlayer
+    public class CharmNebulaPlayer : ModPlayer
     {
-        internal CharmVortex charmVortex = null;
+        internal CharmNebula charmNebula = null;
         public bool IsActive = false;
         
         internal void AccumulateDamageModifier(int damage)
         {
-            if (charmVortex is null)
+            if (charmNebula is null)
                 return;
-            charmVortex.totalDamageModifier += damage;
-            if (charmVortex.level < CharmVortex.MaxLevel && charmVortex.totalDamageModifier > CharmVortex.CumulativeLevelCost(charmVortex.level + 1))
-            {
-                ++charmVortex.level;
-            }
+            charmNebula.totalDamageModifier += damage;
+            if (charmNebula.level < CharmNebula.MaxLevel && charmNebula.totalDamageModifier > CharmNebula.CumulativeLevelCost(charmNebula.level + 1))
+            ++charmNebula.level;
         }
-        
         public override void ResetEffects()
         {
-            charmVortex = null;
+            charmNebula = null;
             IsActive = false;
         }
     }

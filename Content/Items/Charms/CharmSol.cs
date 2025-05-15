@@ -85,7 +85,7 @@ namespace SpectreMod.Content.Items.Charms
                 TooltipLine damageLine = tooltips.FirstOrDefault(x => x.Mod == "Terraria" && x.Text.Contains(damageKey));
                 if (damageLine != null)
                 {
-                    damageLine.Text = damageLine.Text.Replace(damageKey, $"{(level * 0.1f) * 100}%");
+                    damageLine.Text = damageLine.Text.Replace(damageKey, $"{(level * 0.125f) * 100}%");
                 }
             }
         }
@@ -118,7 +118,7 @@ namespace SpectreMod.Content.Items.Charms
         {
             Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ModContent.ItemType<DrakomireFang>(), 30);
-            recipe.AddIngredient(ModContent.ItemType<DrakomireScale>(), 20);
+            recipe.AddIngredient(ModContent.ItemType<SolarScales>(), 20);
             recipe.AddIngredient(ItemID.LunarTabletFragment, 25);
             recipe.AddTile(TileID.LunarCraftingStation);
             recipe.Register();
